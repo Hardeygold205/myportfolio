@@ -1,14 +1,13 @@
-import Image from "next/image";
+import HeroSection from "@/components/HeroSection";
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div>
-      <Image src="" alt="Profile Picture" width={400} height={400} />
-      <h1>Hadi Ademola</h1>
-      <p>
-        I&apos;m a software engineer and aspiring to make a difference in the
-        world.
-      </p>
+    <div className="gap-10 p-10">
+      <HeroSection />
+      <Project />
+      <Skills />
     </div>
   );
 }

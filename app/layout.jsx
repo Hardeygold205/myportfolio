@@ -1,6 +1,8 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/constants/ThemeContext";
 
 const JetBrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -17,8 +19,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={JetBrains.className}>
-        <Navbar />
-        {children}</body>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
