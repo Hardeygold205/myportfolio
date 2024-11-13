@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import Photo from "@/constants/Photo";
 import Link from "next/link";
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function HeroSection() {
   return (
@@ -12,7 +12,7 @@ export default function HeroSection() {
           <div className="order-2 xl:order-none text-center xl:text-left">
             <h1 className="text-xl mb-1">Fullstack Developer</h1>
             <h1 className="sm:text-6xl text-3xl font-semibold mb-8">
-              Hello I'm <br />
+              Hello I&apos;m <br />
               <span className="text-green-500">Hadi Ademola</span>
             </h1>
             <p className="max-w-[500px] mb-10">
@@ -20,14 +20,35 @@ export default function HeroSection() {
               foundation in programming languages. I have a keen eye for detail
               and a strong ability to work well in a team.
             </p>
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Link href="/public/Hadi-Ademola.pdf" download="Hadi_Ademola_CV">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <a href="/public/Hadi-Ademola.pdf" download="Hadi_Ademola_CV">
                 <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
                   <span className="text-green-500">download cv</span>
                   <FiDownload className="text-xl" />
                 </button>
-              </Link>
-              <div>Socials</div>
+              </a>
+              <div className="flex gap-4 items-center">
+                <Link
+                  href="/"
+                  className="p-1 border rounded-full border-green-500 hover:bg-green-500">
+                  <FaFacebook className="text-xl text-green-500 hover:text-white" />
+                </Link>
+                <Link
+                  href="/"
+                  className="p-1 border rounded-full border-green-500 hover:bg-green-500">
+                  <FaLinkedin className="text-xl text-green-500 hover:text-white" />
+                </Link>
+                <Link
+                  href="/"
+                  className="p-1 border rounded-full border-green-500 hover:bg-green-500">
+                  <FaGithub className="text-xl text-green-500 hover:text-white" />
+                </Link>
+                <Link
+                  href="/"
+                  className="p-1 border rounded-full border-green-500 hover:bg-green-500">
+                  <FaTwitter className="text-xl text-green-500 hover:text-white" />
+                </Link>
+              </div>
             </div>
           </div>
 
