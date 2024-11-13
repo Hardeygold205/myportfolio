@@ -5,17 +5,22 @@ import { useTheme } from "@/constants/ThemeContext";
 
 function Navbar() {
   const { theme, toggleTheme } = useTheme();
-  
+
   return (
     <div>
-      <div className="navbar p-5 max-w-5xl mx-auto">
+      <div className="navbar p-5 max-w-6xl mx-auto">
         <div className="flex-1 flex items-center">
           <Link href="/" className="sm:text-4xl text-3xl font-semibold">
             Hadi
             <span className="text-green-400">.</span>
           </Link>
         </div>
-        <div className="flex-none">
+        <div className="flex-none space-x-5">
+          <Link target="_blank" href="https://wa.me/+2348138553465">
+            <button className="btn md:btn-md btn-sm px-2 md:px-5  text-white btn-outline btn-success">
+              Hire Me
+            </button>
+          </Link>
           <label className="swap swap-rotate ">
             <input
               type="checkbox"

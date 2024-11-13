@@ -25,7 +25,7 @@ export default function Skills() {
         <hr className="w-48 h-0.3 bg-green-600 my-8" />
         <div className="flex flex-wrap justify-center gap-10 max-w-sm md:max-w-none">
           <SkillList src={checkMarkIcon} skill="React" />
-          <SkillList src={checkMarkIcon} skill="Vue" />
+          <SkillList src={checkMarkIcon} skill="NextJS" />
           <SkillList src={checkMarkIcon} skill="Tailwind CSS" />
         </div>
         <hr className="w-48 h-0.3 bg-green-600 my-8" />
