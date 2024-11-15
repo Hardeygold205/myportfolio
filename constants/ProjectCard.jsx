@@ -16,7 +16,11 @@ function ProjectCard({ project }) {
         <div className="card-body p-3">
           <h2 className="card-title">
             {name}
-            <div className="badge badge-secondary">{language}</div>
+            {language.map((item, index) => (
+              <div key={index} className="badge badge-secondary">
+                {item}
+              </div>
+            ))}
           </h2>
           <p>{description}</p>
           <div className="card-actions justify-between py-3 flex">

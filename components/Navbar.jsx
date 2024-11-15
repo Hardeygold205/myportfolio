@@ -12,7 +12,7 @@ function Navbar() {
         <div className="flex-1 flex items-center">
           <Link href="/" className="sm:text-4xl text-3xl font-semibold">
             Hadi
-            <span className="text-green-400">.</span>
+            <span className="text-green-400 rounded-full">.</span>
           </Link>
         </div>
         <div className="flex-none space-x-5">
