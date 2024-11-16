@@ -13,6 +13,9 @@ const JetBrains = JetBrains_Mono({
 export const metadata = {
   title: "Hadi Ademola",
   description: "My Portfolio",
+  icons: {
+    icon: "/7867852.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -21,7 +21,7 @@ function Navbar() {
               Hire Me
             </button>
           </Link>
-          <label className="swap swap-rotate ">
+          <label className="swap swap-rotate  ">
             <input
               type="checkbox"
               onChange={toggleTheme}
