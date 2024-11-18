@@ -36,6 +36,5 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-/* some comments here */
 export const useTheme = () => useContext(ThemeContext);
 

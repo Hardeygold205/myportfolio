@@ -23,6 +23,8 @@ function Navbar() {
           </Link>
           <label className="swap swap-rotate  ">
             <input
+              className="theme-controller"
+              value="dark"
               type="checkbox"
               onChange={toggleTheme}
               checked={theme === "dark"}

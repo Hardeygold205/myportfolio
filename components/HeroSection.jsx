@@ -3,14 +3,19 @@ import { FiDownload } from "react-icons/fi";
 import Photo from "@/constants/Photo";
 import Link from "next/link";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FlipWords } from "../components/ui/flip-words";
 
 export default function HeroSection() {
+  const words = ["Fullstack Developer", "Software Engineer", "Geo-Physicsist"];
+
   return (
     <div className="mx-auto max-w-6xl my-10">
       <div className="xl:h-[85vh] h-full flex justify-center p-5 ">
         <div className="flex flex-col xl:flex-row justify-between items-center gap-y-14 xl:gap-y-0 space-x-0 xl:space-x-32">
           <div className="order-2 xl:order-none text-center xl:text-left">
-            <h1 className="text-xl mb-1">Fullstack Developer</h1>
+            <h1 className="text-2xl mb-1">
+              <FlipWords words={words} />
+            </h1>
             <h1 className="sm:text-6xl text-4xl font-semibold mb-8">
               Hello I&apos;m <br />
               <span className="text-green-500">Hadi Ademola</span>
