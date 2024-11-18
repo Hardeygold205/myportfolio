@@ -81,35 +81,35 @@ export const projects = [
     title: "ExcelExchange App",
     description:
       "A streaming service that offers, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+    link: "https://github.com/Hardeygold205/ExcelApp",
     language: ["React Native"],
   },
   {
     title: "Twitter Gain App",
     description:
       "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+    link: "https://github.com/Hardeygold205/twitter-gain-app",
     language: ["HTML", "CSS"],
   },
   {
     title: "CoinBase Daps Clone",
     description:
       "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+    link: "https://github.com/Hardeygold205/coinbase-extension",
     language: ["React", "ExpressJS"],
   },
   {
     title: "My Portfolio",
     description:
       "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+    link: "https://github.com/Hardeygold205/myportfolio",
     language: ["NextJs"],
   },
   {
     title: "CampusRide App",
     description:
       "A multinational technology company that develops, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+    link: "https://github.com/Hardeygold205/CampusRide",
     language: ["React Native"],
   },
 ];
