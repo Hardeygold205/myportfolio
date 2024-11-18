@@ -80,35 +80,35 @@ export const projects = [
   {
     title: "ExcelExchange App",
     description:
-      "A streaming service that offers, and more on thousands of internet-connected devices.",
+      "This is an Exchange App where users can buy and sell cryptocurrencies and digital funds with thier local currency",
     link: "https://github.com/Hardeygold205/ExcelApp",
     language: ["React Native"],
   },
   {
     title: "Twitter Gain App",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+      "This is a twitter gain web app where you can connect with people, basically for following one another on Twitter",
     link: "https://github.com/Hardeygold205/twitter-gain-app",
     language: ["HTML", "CSS"],
   },
   {
     title: "CoinBase Daps Clone",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      "A technology built with React and ExpressJS where users can interact with web3 DAPS",
     link: "https://github.com/Hardeygold205/coinbase-extension",
     language: ["React", "ExpressJS"],
   },
   {
     title: "My Portfolio",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      "This is my personal portfolio where you can know about me, my skills, my projects and all...",
     link: "https://github.com/Hardeygold205/myportfolio",
     language: ["NextJs"],
   },
   {
     title: "CampusRide App",
     description:
-      "A multinational technology company that develops, consumer electronics, personal computers, and related services.",
+      "Ride made easy with CampusRide, A riding app built with lot of technology where you can connect user can connect to drivers and book ride.",
     link: "https://github.com/Hardeygold205/CampusRide",
     language: ["React Native"],
   },
