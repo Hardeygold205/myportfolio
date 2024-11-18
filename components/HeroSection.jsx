@@ -2,7 +2,7 @@ import React from "react";
 import { FiDownload } from "react-icons/fi";
 import Photo from "@/constants/Photo";
 import Link from "next/link";
-import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FlipWords } from "../components/ui/flip-words";
 
 export default function HeroSection() {
@@ -34,22 +34,22 @@ export default function HeroSection() {
               </a>
               <div className="flex gap-4 items-center">
                 <Link
-                  href="/"
+                  href="/discord.com/hardeygold205"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                  <FaFacebook className="text-xl text-green-500 hover:text-white" />
+                  <FaDiscord className="text-xl text-green-500 hover:text-white" />
                 </Link>
                 <Link
-                  href="/"
+                  href="https://www.linkedin.com/in/hardeygold205/"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
                   <FaLinkedin className="text-xl text-green-500 hover:text-white" />
                 </Link>
                 <Link
-                  href="/"
+                  href="https://github.com/Hardeygold205"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
                   <FaGithub className="text-xl text-green-500 hover:text-white" />
                 </Link>
                 <Link
-                  href="/"
+                  href="https://x.com/Hardeygold205"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
                   <FaTwitter className="text-xl text-green-500 hover:text-white" />
                 </Link>

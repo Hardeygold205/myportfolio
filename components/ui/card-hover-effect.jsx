@@ -43,11 +43,11 @@ export const HoverEffect = ({ items, className }) => {
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
             <h2 className="card-title">
-              <div className="badge badge-secondary">{item.language}</div>
+              <div className="badge badge-success">{item.language}</div>
             </h2>
           </Card>
           <div className="card-actions absolute bottom-5 z-50 right-4">
-            <div className="badge badge-outline">live</div>
+            <div className="badge badge-outline ">live</div>
           </div>
         </Link>
       ))}
