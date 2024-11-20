@@ -10,18 +10,14 @@ export const ThemeProvider = ({ children }) => {
       ? localStorage.getItem("theme") ||
         (window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
-          : "light")
-      : "light"
+          : "autumn")
+      : "autumn"
   );
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    console.log("Toggling theme to:", newTheme);
+    const newTheme = theme === "dark" ? "autumn" : "dark";
     setTheme(newTheme);
-    document.body.classList[newTheme === "dark" ? "add" : "remove"](
-      "dark-mode"
-    );
-    console.log("Dark mode class applied:", newTheme === "dark");
+    document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   };
 

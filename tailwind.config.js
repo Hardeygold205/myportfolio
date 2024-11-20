@@ -10,7 +10,7 @@ module.exports = {
   ],
   prefix: "",
   daisyui: {
-    themes: ["cupcake", "dark", "cmyk"]
+    themes: ["autumn", "dark" ]
   },
   theme: {
     container: {

@@ -6,7 +6,7 @@ export default function Project() {
     <div className="max-w-7xl mx-auto">
       <div className="gap-5 items-center flex flex-col p-5">
         <h1 className="text-4xl text-center font-bold mb-8">Project</h1>
-        <div className="max-w-5xl mx-auto px-8">
+        <div className="max-w-5xl mx-auto px-2">
           <HoverEffect items={projects} />
         </div>
       </div>
