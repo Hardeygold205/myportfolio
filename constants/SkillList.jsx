@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { GiCheckMark } from "react-icons/gi";
 
 function SkillList({ src, skill }) {
   return (
     <span className="flex items-center gap-3">
-      <Image src={src} alt="Checkmark icon" width={20} height={20}/>
+      <GiCheckMark className="text-md "/>
       <p className="text-lg font-medium">{skill}</p>
     </span>
   );
