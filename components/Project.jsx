@@ -1,14 +1,22 @@
 import React from "react";
 import { HoverEffect } from "../components/ui/card-hover-effect";
+import { FaArrowCircleRight } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Project() {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="gap-5 items-center flex flex-col p-5">
-        <h1 className="text-4xl text-center font-bold mb-8">Project</h1>
+        <h1 className="md:text-5xl text-4xl font-extrabold mt-10">Project</h1>
         <div className="max-w-5xl mx-auto px-2">
           <HoverEffect items={projects} />
         </div>
+        <Link href="https://github.com/Hardeygold205">
+          <button className="btn rounded-full bg-transparent border border-white text-white px-5 text-md">
+            View all
+            <FaArrowCircleRight className="text-2xl" />
+          </button>
+        </Link>
       </div>
     </div>
   );

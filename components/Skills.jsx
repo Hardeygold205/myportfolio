@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <div className="my-20">
       <section className="flex flex-col items-center text-center">
-        <h1 className="text-4xl font-bold mb-8">Skills</h1>
+        <h1 className="md:text-5xl text-4xl font-extrabold mb-10">Skills</h1>
         <div className="flex flex-wrap justify-center gap-10 max-w-sm md:max-w-none">
           <SkillList skill="HTML" />
           <SkillList skill="CSS" />

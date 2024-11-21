@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="">
       <section className="flex flex-col items-center text-center p-5">
-        <h1 className="text-4xl font-bold mb-8">Contact</h1>
+        <h1 className="md:text-5xl text-4xl font-extrabold mb-10">Contact</h1>
         <form className="flex flex-col gap-8 w-full max-w-lg">
           <div className="form-group">
             <label htmlFor="name" className="sr-only">
