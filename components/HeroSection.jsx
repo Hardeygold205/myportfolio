@@ -1,17 +1,39 @@
+"use client";
+
 import React from "react";
 import { FiDownload } from "react-icons/fi";
 import Photo from "@/constants/Photo";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FlipWords } from "../components/ui/flip-words";
+import InfoList from "@/constants/InfoList";
 
 export default function HeroSection() {
   const words = ["Fullstack Developer", "Software Engineer", "Geo-Physicsist"];
 
+  const infos = [
+    {
+      number: "2",
+      text: "Years of experience",
+    },
+    {
+      number: "14",
+      text: "project completed",
+    },
+    {
+      number: "12",
+      text: "Technology mastered",
+    },
+    {
+      number: "210",
+      text: "Code commit",
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-6xl my-10">
-      <div className="xl:h-[85vh] h-full flex justify-center p-5 ">
-        <div className="flex flex-col xl:flex-row justify-between items-center gap-y-14 xl:gap-y-0 space-x-0 xl:space-x-32">
+      <div className="xl:h-[70vh] h-full flex justify-center p-5 ">
+        <div className="flex flex-col xl:flex-row justify-between items-center gap-y-10 xl:gap-y-0 space-x-0 xl:space-x-32">
           <div className="order-2 xl:order-none text-center xl:text-left">
             <h1 className="text-2xl mb-1">
               <FlipWords words={words} />
@@ -59,6 +81,16 @@ export default function HeroSection() {
 
           <div className="order-1 xl:order-2 flex justify-center items-center">
             <Photo />
+          </div>
+        </div>
+      </div>
+      <div className="p-5 mx-auto">
+        <div className="mx-auto font-bold">
+          <div className="gap-4 grid md:grid-cols-4 grid-cols-2 items-center">
+            <InfoList number="2" text="Years of experience" />
+            <InfoList number="8" text="Technology mastered" />
+            <InfoList number="14" text="Projects completed" />
+            <InfoList number="544" text="Code contributions" />
           </div>
         </div>
       </div>

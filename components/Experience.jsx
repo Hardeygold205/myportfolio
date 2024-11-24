@@ -5,9 +5,9 @@ import ExperienceIcon from "../assets/expBlack-53aeced5.svg";
 
 export default function Experience() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto ">
       <div className="p-5 flex flex-col justify-center">
-        <h1 className="md:text-5xl text-4xl text-end font-extrabold mt-10 ">
+        <h1 className="md:text-5xl text-4xl text-center md:text-end font-extrabold mt-10 ">
           Experiences
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-center space-x-0 md:space-x-40">

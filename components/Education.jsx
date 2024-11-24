@@ -7,10 +7,10 @@ export default function Education() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="p-5 flex flex-col justify-center">
-        <h1 className="md:text-5xl text-4xl text-start font-extrabold mt-10 ">
+        <h1 className="md:text-5xl text-4xl text-center md:text-start font-extrabold mt-10 ">
           Education
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-center space-x-0 md:space-x-40">
+        <div className="flex flex-col md:flex-row justify-between items-center space-x-0 md:space-x-40 ">
           <div className="order-2 md:order-none w-full">
             <EducationList
               school="University of Ibada, Ibadan Nigeria"
