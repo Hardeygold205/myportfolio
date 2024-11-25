@@ -48,7 +48,7 @@ export default function HeroSection() {
               and a strong ability to work well in a team.
             </p>
             <div className="flex flex-col md:flex-row items-center md:justify-between justify-center gap-8">
-              <a href="/public/Hadi-Ademola.pdf" download="Hadi_Ademola_CV">
+              <a href="/Hadi-Ademola.pdf" download="Hadi_Ademola_CV">
                 <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
                   <span className="text-green-500">download cv</span>
                   <FiDownload className="text-xl" />
@@ -84,14 +84,12 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="p-5 mx-auto">
-        <div className="mx-auto font-bold">
-          <div className="gap-4 grid md:grid-cols-4 grid-cols-2 items-center">
-            <InfoList number="2" text="Years of experience" />
-            <InfoList number="8" text="Technology mastered" />
-            <InfoList number="14" text="Projects completed" />
-            <InfoList number="544" text="Code contributions" />
-          </div>
+      <div className="p-5">
+        <div className="flex flex-wrap gap-6 justify-between">
+          <InfoList number="2" text="Years of experience" />
+          <InfoList number="8" text="Technology mastered" />
+          <InfoList number="14" text="Projects completed" />
+          <InfoList number="544" text="Code commits" />
         </div>
       </div>
     </div>
