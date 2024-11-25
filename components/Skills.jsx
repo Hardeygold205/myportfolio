@@ -1,8 +1,8 @@
 import React from "react";
 import SkillList from "@/constants/SkillList";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export default function Skills() {
-
   return (
     <div className="my-20">
       <section className="flex flex-col items-center text-center">
@@ -33,6 +33,56 @@ export default function Skills() {
           <SkillList skill="Jest" />
         </div>
       </section>
+      <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="left"
+          speed="slow"
+        />
+      </div>
     </div>
   );
 }
+
+const testimonials = [
+  {
+    src: "/assets/html-26148722.svg",
+    title: "HTML",
+  },
+  {
+    src: "/assets/css-a3eb2612.svg",
+    title: "CSS",
+  },
+  {
+    src: "/assets/javascript-f0e6bb96.svg",
+    title: "JavaScript",
+  },
+  {
+    src: "/assets/typescript-53138e59.svg",
+    title: "TypeScript",
+  },
+  {
+    src: "/assets/docker-0d1895f9.svg",
+    title: "Python",
+  },
+  {
+    src: "/assets/react-cbaee25f.svg",
+    title: "React",
+  },
+  {
+    src: "/assets/nextJS-f37481f8.svg",
+    title: "NextJS",
+  },
+  {
+    src: "/assets/tailwind-4385994d.svg",
+    title: "Tailwind CSS",
+  },
+  {
+    src: "/assets/bootstrap-ab487500.svg",
+    title: "Bootstrap",
+  },
+  {
+    src: "/assets/git-11e4ab32.svg",
+    title: "Git",
+  },
+];

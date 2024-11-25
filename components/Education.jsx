@@ -1,7 +1,6 @@
 import EducationList from "@/constants/EducationList";
 import React from "react";
 import Image from "next/image";
-import EducationIcon from "../assets/eduBlack-e8bbd37e.svg";
 
 export default function Education() {
   return (
@@ -26,9 +25,9 @@ export default function Education() {
           <div className="order-1 md:order-2 flex justify-center">
             <Image
               alt="education_icon"
-              src={EducationIcon}
-              width="auto"
-              height="auto"
+              src="/assets/eduBlack-e8bbd37e.svg"
+              width={700}
+              height={700}
               className="object-contain"
             />
           </div>

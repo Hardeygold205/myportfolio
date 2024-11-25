@@ -12,25 +12,6 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   const words = ["Fullstack Developer", "Software Engineer", "Geo-Physicsist"];
 
-  const infos = [
-    {
-      number: "2",
-      text: "Years of experience",
-    },
-    {
-      number: "14",
-      text: "project completed",
-    },
-    {
-      number: "12",
-      text: "Technology mastered",
-    },
-    {
-      number: "210",
-      text: "Code commit",
-    },
-  ];
-
   return (
     <div className="mx-auto max-w-6xl my-10">
       <motion.div

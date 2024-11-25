@@ -1,7 +1,6 @@
 import ExperienceList from "@/constants/ExperienceList";
 import React from "react";
 import Image from "next/image";
-import ExperienceIcon from "../assets/expBlack-53aeced5.svg";
 
 export default function Experience() {
   return (
@@ -14,9 +13,9 @@ export default function Experience() {
           <div className="order-2 md:order-none hidden md:flex justify-center">
             <Image
               alt="education_icon"
-              src={ExperienceIcon}
-              width="auto"
-              height="auto"
+              src="/assets/expBlack-53aeced5.svg"
+              width={700}
+              height={700}
               className="object-contain"
             />
           </div>

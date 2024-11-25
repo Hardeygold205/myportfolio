@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import User from "../assets/Design_uten_navn-removebg-preview.png";
 
 export default function Photo() {
   return (
@@ -22,7 +21,7 @@ export default function Photo() {
           }}
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-normal absolute">
           <Image
-            src={User}
+            src="/assets/Design_uten_navn-removebg-preview.png"
             priority
             quality={100}
             fill
