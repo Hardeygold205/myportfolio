@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FlipWords } from "../components/ui/flip-words";
 import InfoList from "@/constants/InfoList";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const words = ["Fullstack Developer", "Software Engineer", "Geo-Physicsist"];
@@ -32,7 +33,11 @@ export default function HeroSection() {
 
   return (
     <div className="mx-auto max-w-6xl my-10">
-      <div className="xl:h-[70vh] h-full flex justify-center p-5 ">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="xl:h-[70vh] h-full flex justify-center p-5 ">
         <div className="flex flex-col xl:flex-row justify-between items-center gap-y-10 xl:gap-y-0 space-x-0 xl:space-x-32">
           <div className="order-2 xl:order-none text-center xl:text-left">
             <h1 className="text-2xl mb-1">
@@ -83,15 +88,19 @@ export default function HeroSection() {
             <Photo />
           </div>
         </div>
-      </div>
-      <div className="p-5">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="p-5">
         <div className="flex flex-wrap gap-6 justify-between">
           <InfoList number="2" text="Years of experience" />
           <InfoList number="8" text="Technology mastered" />
           <InfoList number="14" text="Projects completed" />
           <InfoList number="544" text="Code commits" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
