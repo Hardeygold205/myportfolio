@@ -2,23 +2,60 @@
 
 import React from "react";
 import { InfiniteMovingTest } from "./ui/infinite-moving-test";
+import { AnimatedTestimonials } from "./ui/animated-testimonials";
 
 export default function Testimonies() {
+  const testimonials = [
+    {
+      quote:
+        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      name: "Sarah Chen",
+      designation: "Product Manager at TechFlow",
+      src: "/assets/fitlift.png",
+    },
+    {
+      quote:
+        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+      name: "Michael Rodriguez",
+      designation: "CTO at InnovateSphere",
+      src: "/assets/fresh-burger.png",
+    },
+    {
+      quote:
+        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+      name: "Emily Watson",
+      designation: "Operations Director at CloudScale",
+      src: "/assets/viberr.png",
+    },
+    {
+      quote:
+        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      name: "James Kim",
+      designation: "Engineering Lead at DataPro",
+      src: "/assets/hipsster.png",
+    },
+  ];
+
   return (
     <div className="my-10">
-      <h1 className="md:text-5xl text-center text-4xl font-extrabold mb-10">Testimonies</h1>
+      <h1 className="md:text-5xl text-center text-4xl font-extrabold mb-10">
+        Testimonies
+      </h1>
       <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden mb-10">
         <InfiniteMovingTest
-          items={testimonials}
+          items={testimonies}
           direction="right"
           speed="slow"
         />
+      </div>
+      <div className=" hidden sm:flex">
+        <AnimatedTestimonials testimonials={testimonials} />
       </div>
     </div>
   );
 }
 
-const testimonials = [
+const testimonies = [
   {
     quote:
       "Working with Hadi Ademola has been an absolute pleasure! Their attention to detail, professionalism, and ability to bring our vision to life were exceptional. Highly recommend!",

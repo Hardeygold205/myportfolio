@@ -31,6 +31,7 @@ module.exports = {
       colors: {
         custom: "#B6B6B64d",
       },
+
       keyframes: {
         scroll: {
           to: {

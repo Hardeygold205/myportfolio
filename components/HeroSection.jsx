@@ -10,7 +10,7 @@ import InfoList from "@/constants/InfoList";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const words = ["Fullstack Developer", "Software Engineer", "Geo-Physicsist"];
+  const words = ["Fullstack Developer", "Software Engineer", "Web3 Marketing"];
 
   return (
     <div className="mx-auto max-w-6xl my-10">
