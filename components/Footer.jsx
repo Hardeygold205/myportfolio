@@ -1,4 +1,7 @@
+"use client"
+
 import React from "react";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
@@ -43,7 +46,10 @@ function Footer() {
               required
               className="h-64 p-4 w-full rounded-2xl border bg-transparent border-gray-400 text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
           </div>
-          <button
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: "easeInOut",  delay: 0.3}}
             type="submit"
             value="Submit"
             className="bg-green-400 text-white
@@ -51,7 +57,7 @@ function Footer() {
             duration-400 ease-in-out hover:scale-105 active:translate-y-0.5
             shadow-md hover:shadow-lg">
             Submit
-          </button>
+          </motion.button>
         </form>
       </section>
       <div className="flex items-center justify-center py-12 text-gray-600">

@@ -30,17 +30,16 @@ export const HoverEffect = ({ items, className }) => {
         className
       )}>
       {items.map((item, idx) => (
-        <motion.div variants={imageVariants}>
+        <motion.div key={item?.link || idx} variants={imageVariants}>
           <Link
             href={item?.link}
-            key={item?.link}
-            className="relative group  block p-2 h-full w-full"
+            className="relative group block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}>
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
@@ -62,7 +61,7 @@ export const HoverEffect = ({ items, className }) => {
               </h2>
             </Card>
             <div className="card-actions absolute bottom-5 z-50 right-4">
-              <div className="badge badge-outline ">live</div>
+              <div className="badge badge-outline">live</div>
             </div>
           </Link>
         </motion.div>

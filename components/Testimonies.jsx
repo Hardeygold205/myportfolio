@@ -1,12 +1,19 @@
-"use client"
+"use client";
 
 import React from "react";
 import { InfiniteMovingTest } from "./ui/infinite-moving-test";
 
 export default function Testimonies() {
   return (
-    <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden mb-10">
-      <InfiniteMovingTest items={testimonials} direction="right" speed="slow" />
+    <div className="my-10">
+      <h1 className="md:text-5xl text-center text-4xl font-extrabold mb-10">Testimonies</h1>
+      <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden mb-10">
+        <InfiniteMovingTest
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </div>
     </div>
   );
 }
@@ -43,4 +50,3 @@ const testimonials = [
     title: "Marketing Lead, Brand Essentials",
   },
 ];
-
