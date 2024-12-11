@@ -1,14 +1,43 @@
-"use client"
+"use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 function Footer() {
+  const form = useRef();
+  const [feedback, setFeedback] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_API_KEY,
+        process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
+        form.current,
+        "K_KYj59lSQ0WektXv"
+      )
+      .then(
+        () => {
+          setFeedback("Your message has been sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          setFeedback("Failed to send the message. Please try again.");
+          console.error("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="">
       <section className="flex flex-col items-center text-center p-5">
         <h1 className="md:text-5xl text-4xl font-extrabold mb-10">Contact</h1>
-        <form className="flex flex-col gap-8 w-full max-w-lg">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="flex flex-col gap-8 w-full max-w-lg">
           <div className="form-group">
             <label htmlFor="name" className="sr-only">
               Name
@@ -46,12 +75,13 @@ function Footer() {
               required
               className="h-64 p-4 w-full rounded-2xl border bg-transparent border-gray-400 text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
           </div>
+          {feedback && <p className="text-green-400">{feedback}</p>}
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, ease: "easeInOut",  delay: 0.3}}
+            transition={{ duration: 1.1, ease: "easeInOut", delay: 0.3 }}
             type="submit"
-            value="Submit"
+            value="Send"
             className="bg-green-400 text-white
             rounded-2xl text-lg font-bold mx-auto w-full  p-3 transform transition-transform
             duration-400 ease-in-out hover:scale-105 active:translate-y-0.5
