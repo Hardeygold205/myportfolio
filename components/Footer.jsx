@@ -16,20 +16,22 @@ function Footer() {
         process.env.NEXT_PUBLIC_SERVICE_API_KEY,
         process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
         form.current,
-        "K_KYj59lSQ0WektXv"
+        process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
       )
       .then(
         () => {
           setFeedback("Your message has been sent successfully!");
+          console.log("Your message has been sent successfully!");
           form.current.reset();
         },
         (error) => {
           setFeedback("Failed to send the message. Please try again.");
+          console.error("Failed to send the message. Please try again.");
           console.error("FAILED...", error.text);
         }
       );
   };
-
+  
   return (
     <div className="">
       <section className="flex flex-col items-center text-center p-5">
