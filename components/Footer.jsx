@@ -50,7 +50,7 @@ function Footer() {
               id="name"
               placeholder="Name"
               required
-              className="h-12 p-4 w-full rounded-2xl border bg-transparent border-gray-400 text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="h-12 p-4 w-full rounded-2xl border bg-transparent border-gray-400 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <div className="form-group">
@@ -63,7 +63,7 @@ function Footer() {
               id="email"
               placeholder="Email"
               required
-              className="h-12 p-4 w-full rounded-2xl border bg-transparent border-gray-400 text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="h-12 p-4 w-full rounded-2xl border bg-transparent border-gray-400 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <div className="form-group">
@@ -75,7 +75,7 @@ function Footer() {
               id="message"
               placeholder="Message"
               required
-              className="h-64 p-4 w-full rounded-2xl border bg-transparent border-gray-400 text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+              className="h-64 p-4 w-full rounded-2xl border bg-transparent border-gray-400 dark:text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
           </div>
           {feedback && <p className="text-green-400">{feedback}</p>}
           <motion.button
