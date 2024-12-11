@@ -6,31 +6,31 @@ import emailjs from "@emailjs/browser";
 
 function Footer() {
   const form = useRef();
-  const [feedback, setFeedback] = useState(null);
+    const [feedback, setFeedback] = useState("");
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+    const sendEmail = async (e) => {
+      e.preventDefault();
+      setFeedback("");
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_API_KEY,
-        process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
-        form.current,
-        process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setFeedback("Your message has been sent successfully!");
-          console.log("Your message has been sent successfully!");
-          form.current.reset();
-        },
-        (error) => {
-          setFeedback("Failed to send the message. Please try again.");
-          console.error("Failed to send the message. Please try again.");
-          console.error("FAILED...", error.text);
-        }
-      );
-  };
+      if (!form.current.checkValidity()) {
+        setFeedback("Please fill out all required fields.");
+        return;
+      }
+
+      try {
+        await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_API_KEY,
+          process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
+          form.current,
+          process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
+        );
+        setFeedback("Your message has been sent successfully!");
+        form.current.reset();
+      } catch (error) {
+        console.error("Error sending email:", error);
+        setFeedback("Failed to send the message. Please try again.");
+      }
+    };
   
   return (
     <div className="">
