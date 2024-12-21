@@ -76,10 +76,10 @@ export default function HeroSection() {
         transition={{ duration: 1, ease: "easeInOut" }}
         className="p-5">
         <div className="flex flex-wrap gap-6 justify-between">
-          <InfoList number="2" text="Years of experience" />
+          <InfoList number="3" text="Years of experience" />
           <InfoList number="8" text="Technology mastered" />
           <InfoList number="14" text="Projects completed" />
-          <InfoList number="544" text="Code commits" />
+          <InfoList number="603" text="Code commits" />
         </div>
       </motion.div>
     </div>
