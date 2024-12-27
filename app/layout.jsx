@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html data-theme="cupcake" lang="en">
-      <body className={JetBrains.className}>
+      <body className={`${JetBrains.className} font-sans antialiased `}>
         <ThemeProvider>
           <Navbar />
           {children}
