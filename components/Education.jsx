@@ -19,7 +19,7 @@ export default function Education() {
           className="flex flex-col md:flex-row justify-between items-center space-x-0 md:space-x-40 ">
           <div className="order-2 md:order-none w-full">
             <EducationList
-              school="University of Ibada, Ibadan Nigeria"
+              school="University of Ibadan, Ibadan Nigeria"
               course="Bachelor of Science in Physics"
               year="2021 - 2025"
             />

@@ -28,7 +28,7 @@ export default function Experience() {
           </div>
           <div className="order-1 md:order-2 w-full">
             <ExperienceList
-              school="University of Ibada, Ibadan Nigeria"
+              school="University of Ibadan, Ibadan Nigeria"
               course="Bachelor of Science in Physics"
               year="2021 - 2025"
             />
