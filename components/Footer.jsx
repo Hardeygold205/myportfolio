@@ -94,7 +94,7 @@ function Footer() {
       </section>
       <div className="flex items-center justify-center py-12 text-gray-600">
         <p>
-          &copy; 2023 Hadi Ademola. <br /> Made with Love ❤️❤️.
+          &copy; 2025 Hadi Ademola. <br /> Made with Love ❤️❤️.
         </p>
       </div>
     </div>

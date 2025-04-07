@@ -10,7 +10,7 @@ import InfoList from "@/constants/InfoList";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
-  const words = ["Fullstack Developer", "Software Engineer", "Web3 Marketing"];
+  const words = ["Fullstack Developer", "Frontend Engineer", "Web3 Enthusiast"];
 
   return (
     <div className="mx-auto max-w-6xl my-10">
@@ -34,7 +34,7 @@ export default function HeroSection() {
               and a strong ability to work well in a team.
             </p>
             <div className="flex flex-col md:flex-row items-center md:justify-between justify-center gap-8">
-              <a href="/Hadi-Ademola.pdf" download="Hadi_Ademola_CV">
+              <a href="/Hadi_Ademola.pdf" download="Hadi_Ademola_Resume">
                 <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
                   <span className="text-green-500">download cv</span>
                   <FiDownload className="text-xl" />
@@ -42,7 +42,7 @@ export default function HeroSection() {
               </a>
               <div className="flex gap-4 items-center">
                 <Link
-                  href="/discord.com/hardeygold205"
+                  href="https://discord.com/hardeygold205"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
                   <FaDiscord className="text-xl text-green-500 hover:text-white" />
                 </Link>
@@ -77,9 +77,9 @@ export default function HeroSection() {
         className="p-5">
         <div className="flex flex-wrap gap-6 justify-between">
           <InfoList number="3" text="Years of experience" />
-          <InfoList number="8" text="Technology mastered" />
-          <InfoList number="14" text="Projects completed" />
-          <InfoList number="836" text="Code commits" />
+          <InfoList number="12" text="Technology mastered" />
+          <InfoList number="24" text="Projects completed" />
+          <InfoList number="876" text="Code commits" />
         </div>
       </motion.div>
     </div>

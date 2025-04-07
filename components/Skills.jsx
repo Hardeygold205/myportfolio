@@ -19,7 +19,7 @@ export default function Skills() {
           <SkillList skill="CSS" />
           <SkillList skill="JavaScript" />
           <SkillList skill="TypeScript" />
-          <SkillList skill="Node" />
+          <SkillList skill="NodeJS" />
           <SkillList skill="Python" />
         </motion.div>
         <hr className="w-48 h-0.5 bg-gray-700 dark:bg-gray-200 my-8" />
@@ -31,7 +31,7 @@ export default function Skills() {
           <SkillList skill="React" />
           <SkillList skill="React Native" />
           <SkillList skill="NextJS" />
-          <SkillList skill="Tailwind CSS" />
+          <SkillList skill="TailwindCSS" />
           <SkillList skill="Bootstrap" />
           <SkillList skill="ExpressJS" />
           <SkillList skill="MongoDB" />
@@ -42,10 +42,11 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="flex flex-wrap justify-center gap-10 max-w-sm md:max-w-none">
+          <SkillList skill="PostgreSQL" />
           <SkillList skill="Redux" />
-          <SkillList skill="Webpack" />
-          <SkillList skill="Git" />
-          <SkillList skill="Jest" />
+          <SkillList skill="Web3.js" />
+          <SkillList skill="Solidity" />
+          <SkillList skill="LaTeX" />
         </motion.div>
       </section>
       <div className="h-[20rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
