@@ -45,7 +45,7 @@ export const projects = [
     language: ["HTML", "CSS"],
   },
   {
-    title: "CoinBase Daps Clone",
+    title: "CoinBitExtension DApps",
     description:
       "A technology built with React and ExpressJS where users can interact with web3 DAPS",
     link: "https://github.com/Hardeygold205/coinbase-extension",

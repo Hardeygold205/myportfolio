@@ -28,18 +28,18 @@ export default function Experience() {
           </div>
           <div className="order-1 md:order-2 w-full">
             <ExperienceList
-              school="University of Ibadan, Ibadan Nigeria"
-              course="Bachelor of Science in Physics"
-              year="2021 - 2025"
+              school="CampusRide Org."
+              course="App Developer"
+              year="2024 - 2025"
             />
             <ExperienceList
-              school="ALX Africa"
-              course="Software Engineer"
-              year="2023 - 2024"
+              school="ExcelExchange"
+              course="Full-Stack Developer"
+              year="2023 - 2025"
             />
             <ExperienceList
-              school="ALX Africa"
-              course="Software Engineer"
+              school="Imaginarium Creative Global"
+              course="SIWES Intern"
               year="2023 - 2024"
             />
           </div>
