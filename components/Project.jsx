@@ -12,7 +12,7 @@ export default function Project() {
           <HoverEffect items={projects} />
         </div>
         <Link href="https://github.com/Hardeygold205">
-          <button className="btn rounded-full bg-transparent border border-white text-white px-5 text-md">
+          <button className="btn rounded-full bg-transparent border px-5 text-md">
             View all
             <FaArrowCircleRight className="text-2xl" />
           </button>

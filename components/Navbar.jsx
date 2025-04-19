@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <div>
-      <div className="navbar p-5 max-w-6xl mx-auto">
+      <div className="navbar p-5 max-w-6xl mx-auto shadow-lg rounded-md rounded-b-md">
         <div className="flex-1 flex items-center">
           <Link href="/" className="sm:text-4xl text-3xl font-semibold">
             Hadi

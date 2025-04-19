@@ -4,13 +4,20 @@ import React from "react";
 import { FiDownload } from "react-icons/fi";
 import Photo from "@/constants/Photo";
 import Link from "next/link";
-import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { FlipWords } from "../components/ui/flip-words";
 import InfoList from "@/constants/InfoList";
 import { motion } from "framer-motion";
+import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 export default function HeroSection() {
   const words = ["Fullstack Developer", "Frontend Engineer", "Web3 Enthusiast"];
+
+  const details = `I am a passionate and dedicated Frontend Engineer with a strong
+              foundation in programming languages. I have a keen eye for detail
+              and a strong ability to work well in a team.
+`;
 
   return (
     <div className="mx-auto max-w-6xl my-10">
@@ -28,11 +35,9 @@ export default function HeroSection() {
               Hello I&apos;m <br />
               <span className="text-green-500">Hadi Ademola</span>
             </h1>
-            <p className="max-w-[500px] mb-10 leading-7">
-              I am a passionate and dedicated software engineer with a strong
-              foundation in programming languages. I have a keen eye for detail
-              and a strong ability to work well in a team.
-            </p>
+            <div className="max-w-[500px] mb-110">
+              <TextGenerateEffect details={details} />
+            </div>
             <div className="flex flex-col md:flex-row items-center md:justify-between justify-center gap-8">
               <a href="/Hadi_Ademola.pdf" download="Hadi_Ademola_Resume">
                 <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
@@ -59,12 +64,11 @@ export default function HeroSection() {
                 <Link
                   href="https://x.com/Hardeygold205"
                   className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                  <FaTwitter className="text-xl text-green-500 hover:text-white" />
+                  <FaXTwitter className="text-xl text-green-500 hover:text-white" />
                 </Link>
               </div>
             </div>
           </div>
-
           <div className="order-1 xl:order-2 flex justify-center items-center">
             <Photo />
           </div>
@@ -78,7 +82,7 @@ export default function HeroSection() {
         <div className="flex flex-wrap gap-6 justify-between">
           <InfoList number="3" text="Years of experience" />
           <InfoList number="12" text="Technology mastered" />
-          <InfoList number="24" text="Projects completed" />
+          <InfoList number="14" text="Projects completed" />
           <InfoList number="876" text="Code commits" />
         </div>
       </motion.div>

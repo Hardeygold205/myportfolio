@@ -6,32 +6,33 @@ import emailjs from "@emailjs/browser";
 
 function Footer() {
   const form = useRef();
-    const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
-    const sendEmail = async (e) => {
-      e.preventDefault();
-      setFeedback("");
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setFeedback("");
 
-      if (!form.current.checkValidity()) {
-        setFeedback("Please fill out all required fields.");
-        return;
-      }
+    if (!form.current.checkValidity()) {
+      setFeedback("Please fill out all required fields.");
+      return;
+    }
 
-      try {
-        await emailjs.sendForm(
-          process.env.NEXT_PUBLIC_SERVICE_API_KEY,
-          process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
-          form.current,
-          process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
-        );
-        setFeedback("Your message has been sent successfully!");
-        form.current.reset();
-      } catch (error) {
-        console.error("Error sending email:", error);
-        setFeedback("Failed to send the message. Please try again.");
-      }
-    };
-  
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_API_KEY,
+        process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
+        form.current,
+        process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
+      );
+      setShowModal(true); 
+      form.current.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setFeedback("Failed to send the message. Please try again.");
+    }
+  };
+
   return (
     <div className="">
       <section className="flex flex-col items-center text-center p-5">
@@ -84,14 +85,33 @@ function Footer() {
             transition={{ duration: 1.1, ease: "easeInOut", delay: 0.3 }}
             type="submit"
             value="Send"
-            className="bg-green-400 text-white
-            rounded-2xl text-lg font-bold mx-auto w-full  p-3 transform transition-transform
-            duration-400 ease-in-out hover:scale-105 active:translate-y-0.5
-            shadow-md hover:shadow-lg">
+            className="bg-green-400 text-white rounded-2xl text-lg font-bold mx-auto w-full p-3 transform transition-transform duration-400 ease-in-out hover:scale-105 active:translate-y-0.5 shadow-md hover:shadow-lg">
             Submit
           </motion.button>
         </form>
       </section>
+      {showModal && (
+        <dialog open className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Thank you!</h3>
+            <p className="py-4">Your message has been sent successfully!</p>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn" onClick={() => setShowModal(false)}>
+                  Close
+                </button>
+              </form>
+            </div>
+          </div>
+          <form
+            method="dialog"
+            className="modal-backdrop"
+            onClick={() => setShowModal(false)}>
+            <button>close</button>
+          </form>
+        </dialog>
+      )}
+
       <div className="flex items-center justify-center py-12 text-gray-600">
         <p>
           &copy; 2025 Hadi Ademola. <br /> Made with Love ❤️❤️.
