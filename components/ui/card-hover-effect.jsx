@@ -32,6 +32,7 @@ export const HoverEffect = ({ items, className }) => {
       {items.map((item, idx) => (
         <motion.div key={item?.link || idx} variants={imageVariants}>
           <Link
+            target="_blank"
             href={item?.link}
             className="relative group block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}

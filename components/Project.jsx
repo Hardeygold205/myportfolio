@@ -11,7 +11,7 @@ export default function Project() {
         <div className="max-w-5xl mx-auto px-2">
           <HoverEffect items={projects} />
         </div>
-        <Link href="https://github.com/Hardeygold205">
+        <Link target="_blank" href="https://github.com/Hardeygold205">
           <button className="btn rounded-full bg-transparent border px-5 text-md">
             View all
             <FaArrowCircleRight className="text-2xl" />
@@ -48,7 +48,7 @@ export const projects = [
     title: "CoinBitExtension DApps",
     description:
       "A technology built with React and ExpressJS where users can interact with web3 DAPS",
-    link: "https://github.com/Hardeygold205/coinbase-extension",
+    link: "https://coinbit-extension.vercel.app",
     language: ["React", "ExpressJS"],
   },
   {

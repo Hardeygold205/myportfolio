@@ -26,7 +26,7 @@ export default function Photo() {
             quality={100}
             fill
             alt=""
-            className="object-contain rounded-full"
+            className="object-contain rounded-full p-3"
           />
         </motion.div>
         <motion.svg
