@@ -83,7 +83,7 @@ export default function HeroSection() {
           <InfoList number="3" text="Years of experience" />
           <InfoList number="12" text="Technology mastered" />
           <InfoList number="14" text="Projects completed" />
-          <InfoList number="876" text="Code commits" />
+          <InfoList number="806" text="Code commits" />
         </div>
       </motion.div>
     </div>
