@@ -39,7 +39,7 @@ export default function HeroSection() {
               <TextGenerateEffect details={details} />
             </div>
             <div className="flex flex-col md:flex-row items-center md:justify-between justify-center gap-8">
-              <a href="/Hadi_Ademola.pdf" download="Hadi_Ademola_Resume">
+              <a href="/Hadi_Ademola_Resume.pdf" download="Hadi_Ademola_Resume">
                 <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
                   <span className="text-green-500">download cv</span>
                   <FiDownload className="text-xl" />
