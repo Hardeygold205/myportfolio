@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 
 export default function HeroSection() {
-  const words = ["Fullstack Developer", "Frontend Engineer", "Web3 Enthusiast"];
+  const words = ["Web Developer", "Frontend Engineer", "Mobile-App Developer", "Full-Stack Developer"];
 
   const details = `I am a passionate and dedicated Frontend Engineer with a strong
               foundation in programming languages. I have a keen eye for detail
