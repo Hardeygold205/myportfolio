@@ -11,24 +11,45 @@ const JetBrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Hadi Ademola | Full-Stack Developer & Designer Portfolio",
+  title: "Hadi Ademola | Full-Stack Web Developer & Mobile Developer",
   description:
-    "Professional portfolio of Hadi Ademola, showcasing web development projects, design work, and technical skills. Specializing in modern web technologies and creative solutions.",
-  keywords: [
-    "web developer",
-    "portfolio",
-    "Hadi Ademola",
-    "frontend developer",
-    "full-stack developer",
-    "web design",
-    "JavaScript developer",
-    "React developer",
-  ],
+    "Explore Hadi Ademola's portfolio, showcasing full-stack web development, React, React Native and design projects. Hire me for innovative solutions!",
   authors: [{ name: "Hadi Ademola" }],
+  link: [
+    {
+      rel: "canonical",
+      href: "https://hadiademola.vercel.app",
+    },
+  ],
+  meta: [
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Hadi Ademola",
+        jobTitle: "Full-Stack(Web & Mobile) Developer",
+        url: "https://hadiademola.vercel.app",
+        sameAs: [
+          "https://www.linkedin.com/in/hardeygold205",
+          "https://github.com/Hardeygold205",
+          "https://x.com/Hardeygold205",
+        ],
+        description:
+          "Hadi Ademola is a passionate Full-Stack Developer specializing in React, Next.js, React Native, Web3 and modern web technologies.",
+      }),
+    },
+  ],
   openGraph: {
-    title: "Hadi Ademola | Full-Stack Developer Portfolio",
+    title: "Hadi Ademola | Full-Stack(Web & Mobile) Developer Portfolio",
     description:
-      "Professional portfolio showcasing my web development and design projects",
+      "Professional portfolio showcasing my web development and mobile development and my other achievements",
     url: "https://hadiademola.vercel.app",
     siteName: "Hadi Ademola Portfolio",
     images: [
@@ -44,9 +65,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hadi Ademola | Full-Stack Developer Portfolio",
+    title: "Hadi Ademola | Full-Stack Web & Mobile Developer Portfolio",
     description:
-      "Professional portfolio showcasing my web development and design projects",
+      "Professional portfolio showcasing my web development and mobile development and my other achievements",
     images: ["/home-page.png"],
   },
   icons: {

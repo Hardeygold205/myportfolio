@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Project() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div id="projects" className="max-w-7xl mx-auto">
       <div className="gap-5 items-center flex flex-col p-5">
         <h1 className="md:text-5xl text-4xl font-extrabold mt-10">Project</h1>
         <div className="max-w-5xl mx-auto px-2">

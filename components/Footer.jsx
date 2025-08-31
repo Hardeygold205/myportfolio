@@ -34,7 +34,7 @@ function Footer() {
   };
 
   return (
-    <div className="">
+    <div id="contact" className="">
       <section className="flex flex-col items-center text-center p-5">
         <h1 className="md:text-5xl text-4xl font-extrabold mb-10">Contact</h1>
         <form
