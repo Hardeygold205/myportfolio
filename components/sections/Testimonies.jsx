@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { InfiniteMovingTest } from "./ui/infinite-moving-test";
-import { AnimatedTestimonials } from "./ui/animated-testimonials";
+import { InfiniteMovingTest } from "@/components/ui/infinite-moving-test";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 export default function Testimonies() {
   const testimonials = [

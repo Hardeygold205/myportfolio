@@ -6,13 +6,18 @@ import Photo from "@/constants/Photo";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { FlipWords } from "../components/ui/flip-words";
+import { FlipWords } from "@/components/ui/flip-words";
 import InfoList from "@/constants/InfoList";
 import { motion } from "framer-motion";
-import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export default function HeroSection() {
-  const words = ["Web Developer", "Frontend Engineer", "Mobile-App Developer", "Full-Stack Developer"];
+  const words = [
+    "Web Developer",
+    "Frontend Engineer",
+    "Mobile-App Developer",
+    "Full-Stack Developer",
+  ];
 
   const details = `I am a passionate and dedicated Frontend Engineer with a strong
               foundation in programming languages. I have a keen eye for detail

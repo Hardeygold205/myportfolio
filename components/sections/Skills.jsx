@@ -2,12 +2,12 @@
 
 import React from "react";
 import SkillList from "@/constants/SkillList";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { motion } from "framer-motion";
 
 export default function Skills() {
   return (
-    <div className="my-20">
+    <div id="services" className="my-20">
       <section className="flex flex-col items-center text-center">
         <h1 className="md:text-5xl text-4xl font-extrabold mb-10">Skills</h1>
         <motion.div

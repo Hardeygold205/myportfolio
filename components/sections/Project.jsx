@@ -1,5 +1,5 @@
 import React from "react";
-import { HoverEffect } from "../components/ui/card-hover-effect";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Link from "next/link";
 

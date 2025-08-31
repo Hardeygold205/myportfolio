@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import Project from "@/components/sections/Project";
 
 export default function Projects() {
-  return (
-    <div>Projects</div>
-  )
+  return <Project />;
 }

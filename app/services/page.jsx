@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import Skills from "@/components/sections/Skills";
 
 export default function Service() {
-  return (
-    <div>Service</div>
-  )
+  return <Skills />;
 }
