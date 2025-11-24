@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "@/constants/ThemeContext";
 
@@ -7,8 +8,8 @@ function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div>
-      <div className="navbar p-5 max-w-6xl mx-auto shadow-lg rounded-md rounded-b-md">
+    <div className="bg-neutral-950">
+      <div className="navbar p-5 max-w-6xl mx-auto shadow-xl rounded-md bg-neutral-950 rounded-b-md">
         <div className="flex-1 flex items-center">
           <Link href="/" className="sm:text-4xl text-3xl font-semibold">
             Hadi
@@ -21,7 +22,7 @@ function Navbar() {
               Hire Me
             </button>
           </Link>
-          <label className="swap swap-rotate  ">
+          {/* <label className="swap swap-rotate  ">
             <input
               className="theme-controller"
               value="dark"
@@ -41,7 +42,7 @@ function Navbar() {
               viewBox="0 0 24 24">
               <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
             </svg>
-          </label>
+          </label> */}
         </div>
       </div>
     </div>

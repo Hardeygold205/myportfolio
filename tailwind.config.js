@@ -16,9 +16,9 @@ module.exports = {
     "./src/**/*.{js,jsx}",
   ],
   prefix: "",
-  daisyui: {
-    themes: ["autumn", "dark"],
-  },
+  // daisyui: {
+  //   themes: ["autumn", "dark"],
+  // },
   theme: {
     container: {
       center: true,
