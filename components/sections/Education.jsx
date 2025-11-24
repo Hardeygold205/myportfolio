@@ -77,7 +77,6 @@ function TimelineItem({ item, index, isEducation }) {
   );
 }
 
-// Main Component
 export default function EducationExperience() {
   const [activeTab, setActiveTab] = useState("all");
 
@@ -137,7 +136,6 @@ export default function EducationExperience() {
 
   return (
     <div className="relative py-20 bg-neutral-950 overflow-hidden">
-      {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" />
         <div
@@ -147,7 +145,6 @@ export default function EducationExperience() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +177,7 @@ export default function EducationExperience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-4 mb-16">
+          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-16 w-full">
           {[
             { id: "all", label: "All", icon: "📊" },
             { id: "education", label: "Education", icon: "🎓" },
@@ -191,18 +188,17 @@ export default function EducationExperience() {
               onClick={() => setActiveTab(tab.id)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
+              className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-green-500 to-pink-500 text-white shadow-lg shadow-green-500/50"
                   : "bg-white/5 text-gray-400 border border-white/10 hover:border-green-500/50"
               }`}>
-              <span>{tab.icon}</span>
+              <span className="text-base md:text-lg">{tab.icon}</span>
               {tab.label}
             </motion.button>
           ))}
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative">
           <AnimatePresence mode="wait">
             {(activeTab === "all" || activeTab === "education") && (
@@ -267,7 +263,6 @@ export default function EducationExperience() {
           </AnimatePresence>
         </div>
 
-        {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

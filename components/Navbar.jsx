@@ -11,7 +11,7 @@ function Navbar() {
     <div className="bg-neutral-950">
       <div className="navbar p-5 max-w-6xl mx-auto shadow-xl rounded-md bg-neutral-950 rounded-b-md">
         <div className="flex-1 flex items-center">
-          <Link href="/" className="sm:text-4xl text-3xl font-semibold">
+          <Link href="/" className="sm:text-4xl text-3xl text-white font-semibold">
             Hadi
             <span className="text-green-400 rounded-full">.</span>
           </Link>

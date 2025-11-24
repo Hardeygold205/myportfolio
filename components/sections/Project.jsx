@@ -1,15 +1,14 @@
-"use client"; // Add this if using Next.js App Router
+"use client";
 
 import React from "react";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
-import { motion } from "framer-motion"; // Assuming you can install framer-motion, if not remove motion.div wrappers
+import { motion } from "framer-motion";
 
 export default function Project() {
   return (
     <section id="projects" className="py-20 bg-neutral-950 text-white">
       <div className="max-w-7xl mx-auto px-5">
-        {/* Header */}
         <div className="flex flex-col items-center mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4">
             Featured Projects
@@ -20,14 +19,12 @@ export default function Project() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
 
-        {/* View All Button */}
         <div className="flex justify-center">
           <Link href="https://github.com/Hardeygold205" target="_blank">
             <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">

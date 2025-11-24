@@ -26,7 +26,7 @@ export default function HeroSection() {
 
   return (
     <div className="bg-neutral-950">
-      <div id="about" className="mx-auto max-w-6xl">
+      <div id="about" className="mx-auto max-w-6xl text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
