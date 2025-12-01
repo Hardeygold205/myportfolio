@@ -9,15 +9,32 @@ export default function Project() {
   return (
     <section id="projects" className="py-20 bg-neutral-950 text-white">
       <div className="max-w-7xl mx-auto px-5">
-        <div className="flex flex-col items-center mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 space-y-6">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-block mb-4">
+            <span className="px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-semibold">
+              📚 My Works
+            </span>
+          </motion.div>
+
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <p className="text-neutral-400 max-w-2xl">
+
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             A collection of applications and tools I&apos;ve built to solve
             problems and explore new technologies.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {projects.map((project, idx) => (

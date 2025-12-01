@@ -158,7 +158,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16">
+          className="text-center mb-16 space-y-6">
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}

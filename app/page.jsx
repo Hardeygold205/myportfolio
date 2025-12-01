@@ -1,7 +1,7 @@
-import Education from "@/components/sections/Education";
-import HeroSection from "@/components/sections/HeroSection";
-import Project from "@/components/sections/Project";
-import Skills from "@/components/sections/Skills";
+import Education from "@/sections/Education";
+import HeroSection from "@/sections/HeroSection";
+import Project from "@/sections/Project";
+import Skills from "@/sections/Skills";
 
 export default function Home() {
   return (

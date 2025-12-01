@@ -28,7 +28,6 @@ function TimelineItem({ item, index, isEducation }) {
         />
       </motion.div>
 
-      {/* Content card */}
       <div
         className={`ml-12 md:ml-0 ${
           isEducation ? "md:pr-12 md:text-right" : "md:pl-12"
@@ -36,10 +35,8 @@ function TimelineItem({ item, index, isEducation }) {
         <motion.div
           whileHover={{ scale: 1.02, y: -5 }}
           className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 overflow-hidden group">
-          {/* Background glow effect */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-          {/* Year badge */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -51,7 +48,6 @@ function TimelineItem({ item, index, isEducation }) {
             📅 {item.year}
           </motion.div>
 
-          {/* Content */}
           <div className="relative z-10">
             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
               {item.title}
@@ -65,7 +61,6 @@ function TimelineItem({ item, index, isEducation }) {
             </p>
           </div>
 
-          {/* Decorative corner */}
           <div
             className={`absolute ${
               isEducation ? "top-0 right-0" : "top-0 left-0"
@@ -109,14 +104,6 @@ export default function EducationExperience() {
 
   const experienceData = [
     {
-      title: "CampusRide Org.",
-      role: "App Developer",
-      year: "2024 - 2025",
-      icon: "📱",
-      description:
-        "Developing mobile applications for campus transportation solutions using React Native and modern technologies.",
-    },
-    {
       title: "ExcelExchange",
       role: "Full-Stack Developer",
       year: "2023 - 2025",
@@ -131,6 +118,38 @@ export default function EducationExperience() {
       icon: "🎯",
       description:
         "Industrial training focused on creative design and web development, working on client projects and digital solutions.",
+    },
+    {
+      title: "Branovax Technology",
+      role: "Full-Stack Developer & Team Lead",
+      year: "2025 - Present",
+      icon: "🎯",
+      description:
+        "Led a 3-member team to design and deploy custom web solutions for clients, utilizing NextJS with SEO Implemented.",
+    },
+    {
+      title: "Play2Score Organization",
+      role: "Frontend Mobile Developer",
+      year: "2025 - Present",
+      icon: "🎯",
+      description:
+        "Building a mobile and web application using React Native and Expo for an organization, integrated Supase for user authentication, real-time data, and notifications.",
+    },
+    {
+      title: "Extension Africa",
+      role: "Frontend Developer (Internship)",
+      year: "2025 - Present",
+      icon: "🎯",
+      description:
+        "Refractored and improved an old website for the organization, Designed onboarding, login/signup, forms and all UI with responsive layouts, Collaborated with a team of 13+ using Zoho and other social platform.",
+    },
+    {
+      title: "CampusRide Org.",
+      role: "App Developer",
+      year: "2024 - 2025",
+      icon: "📱",
+      description:
+        "Developing mobile applications for campus transportation solutions using React Native and modern technologies.",
     },
   ];
 
@@ -150,7 +169,7 @@ export default function EducationExperience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16">
+          className="text-center mb-16 space-y-6">
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -162,7 +181,7 @@ export default function EducationExperience() {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
             Education & Experience
           </h2>
 
@@ -250,14 +269,25 @@ export default function EducationExperience() {
                   <div className="flex-1 h-px bg-gradient-to-r from-pink-500 to-transparent" />
                 </motion.div>
 
-                {experienceData.map((item, index) => (
-                  <TimelineItem
-                    key={index}
-                    item={item}
-                    index={index}
-                    isEducation={false}
-                  />
-                ))}
+                {activeTab === "experience"
+                  ? experienceData.map((item, index) => (
+                      <TimelineItem
+                        key={index}
+                        item={item}
+                        index={index}
+                        isEducation={false}
+                      />
+                    ))
+                  : experienceData
+                      .slice(0, 3)
+                      .map((item, index) => (
+                        <TimelineItem
+                          key={index}
+                          item={item}
+                          index={index}
+                          isEducation={false}
+                        />
+                      ))}
               </motion.div>
             )}
           </AnimatePresence>
@@ -271,7 +301,7 @@ export default function EducationExperience() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { number: "3", label: "Certifications", icon: "🏆" },
-            { number: "7+", label: "Work Experiences", icon: "💼" },
+            { number: "6+", label: "Work Experiences", icon: "💼" },
             { number: "4+", label: "Years Learning", icon: "📚" },
             { number: "12+", label: "Projects Completed", icon: "🚀" },
           ].map((stat, index) => (

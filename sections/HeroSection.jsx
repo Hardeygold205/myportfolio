@@ -2,12 +2,12 @@
 
 import React from "react";
 import { FiDownload } from "react-icons/fi";
-import Photo from "@/constants/Photo";
+import Photo from "@/components/Photo";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FlipWords } from "@/components/ui/flip-words";
-import InfoList from "@/constants/InfoList";
+import InfoList from "@/components/InfoList";
 import { motion } from "framer-motion";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
