@@ -219,7 +219,7 @@ export default function EducationExperience() {
         </motion.div>
 
         <div className="relative">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync">
             {(activeTab === "all" || activeTab === "education") && (
               <motion.div
                 key="education"

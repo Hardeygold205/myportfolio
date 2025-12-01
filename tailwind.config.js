@@ -9,11 +9,11 @@ const {
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,jsx}",
+    "./context/**/*.{js,jsx}",
+    "./sections/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
     "./constants/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
-    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   // daisyui: {
