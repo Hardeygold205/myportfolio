@@ -302,7 +302,7 @@ export default function EducationExperience() {
           {[
             { number: "3", label: "Certifications", icon: "🏆" },
             { number: "6+", label: "Work Experiences", icon: "💼" },
-            { number: "4+", label: "Years Learning", icon: "📚" },
+            { number: "5+", label: "Years Learning", icon: "📚" },
             { number: "12+", label: "Projects Completed", icon: "🚀" },
           ].map((stat, index) => (
             <motion.div
