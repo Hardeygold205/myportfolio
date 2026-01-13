@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { RiTwitterXFill } from "react-icons/ri";
 
 function Footer() {
   const form = useRef();
@@ -54,7 +55,7 @@ function Footer() {
         <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-green-500/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-20 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -64,11 +65,11 @@ function Footer() {
             className="space-y-8">
             <div>
               <motion.h2
-                className="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-white to-green-700 bg-clip-text text-transparent"
+                className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-white to-green-700 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.02 }}>
                 Let&apos;s Connect
               </motion.h2>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-md md:text-lg leading-relaxed">
                 Have a project in mind or just want to chat? I&apos;d love to
                 hear from you. Drop me a message and I&apos;ll get back to you
                 as soon as possible.
@@ -148,7 +149,6 @@ function Footer() {
                 },
                 {
                   name: "twitter",
-                  path: "M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z",
                   link: "https://x.com/Hardeygold205",
                 },
               ].map((social, index) => (
@@ -163,12 +163,16 @@ function Footer() {
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}>
                   <span className="sr-only">{social.name}</span>
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24">
-                    <path d={social.path} />
-                  </svg>
+                  {social.path ? (
+                    <svg
+                      className="w-6 h-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24">
+                      <path d={social.path} />
+                    </svg>
+                  ) : (
+                    <RiTwitterXFill className="w-6 h-6" />
+                  )}
                 </motion.a>
               ))}
             </div>
@@ -322,8 +326,8 @@ function Footer() {
           viewport={{ once: true }}
           className="mt-16 pt-8 border-t border-white/10 text-center">
           <p className="text-gray-400 flex items-center justify-center gap-2">
-            © 2025 Hadi Ademola. <br className="flex md:hidden" /> Crafted with
-            ❤️ and passion
+            © {new Date().getFullYear()} Hadi Ademola.
+            <br className="flex md:hidden" /> Crafted with ❤️ and passion
           </p>
         </motion.div>
       </div>

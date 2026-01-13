@@ -170,7 +170,7 @@ export default function Skills() {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
 

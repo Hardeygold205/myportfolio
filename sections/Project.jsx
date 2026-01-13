@@ -26,7 +26,7 @@ export default function Project() {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
             Featured Projects
           </h2>
 
@@ -44,7 +44,7 @@ export default function Project() {
 
         <div className="flex justify-center">
           <Link href="https://github.com/Hardeygold205" target="_blank">
-            <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+            <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
               <span className="mr-2">View all projects on GitHub</span>
               <FaArrowRight className="transition-transform group-hover:translate-x-1" />
             </button>

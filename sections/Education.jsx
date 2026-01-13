@@ -104,22 +104,6 @@ export default function EducationExperience() {
 
   const experienceData = [
     {
-      title: "ExcelExchange",
-      role: "Full-Stack Developer",
-      year: "2023 - 2025",
-      icon: "🚀",
-      description:
-        "Building scalable web applications with React, Node.js, and cloud technologies for financial technology solutions.",
-    },
-    {
-      title: "Imaginarium Creative Global",
-      role: "SIWES Intern",
-      year: "2023 - 2024",
-      icon: "🎯",
-      description:
-        "Industrial training focused on creative design and web development, working on client projects and digital solutions.",
-    },
-    {
       title: "Branovax Technology",
       role: "Full-Stack Developer & Team Lead",
       year: "2025 - Present",
@@ -142,6 +126,22 @@ export default function EducationExperience() {
       icon: "🎯",
       description:
         "Refractored and improved an old website for the organization, Designed onboarding, login/signup, forms and all UI with responsive layouts, Collaborated with a team of 13+ using Zoho and other social platform.",
+    },
+    {
+      title: "ExcelExchange",
+      role: "Full-Stack Developer",
+      year: "2023 - 2025",
+      icon: "🚀",
+      description:
+        "Building scalable web applications with React, Node.js, and cloud technologies for financial technology solutions.",
+    },
+    {
+      title: "Imaginarium Creative Global",
+      role: "SIWES Intern",
+      year: "2023 - 2024",
+      icon: "🎯",
+      description:
+        "Industrial training focused on creative design and web development, working on client projects and digital solutions.",
     },
     {
       title: "CampusRide Org.",
@@ -181,7 +181,7 @@ export default function EducationExperience() {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
             Education & Experience
           </h2>
 
