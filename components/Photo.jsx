@@ -21,7 +21,7 @@ export default function Photo() {
           }}
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-normal absolute">
           <Image
-            src="/assets/Design_uten_navn-removebg-preview.png"
+            src="/assets/my_picture3.png"
             priority
             quality={100}
             fill
