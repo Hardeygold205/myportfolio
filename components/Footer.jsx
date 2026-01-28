@@ -2,7 +2,8 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { RiTwitterXFill } from "react-icons/ri";
+import { RiTwitterXFill, RiDiscordFill } from "react-icons/ri";
+import { BsTelephoneOutbound } from "react-icons/bs";
 
 function Footer() {
   const form = useRef();
@@ -10,6 +11,7 @@ function Footer() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,7 +38,7 @@ function Footer() {
         process.env.NEXT_PUBLIC_SERVICE_API_KEY,
         process.env.NEXT_PUBLIC_TEMPLATE_API_KEY,
         formData,
-        process.env.NEXT_PUBLIC_USER_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_USER_PUBLIC_KEY,
       );
       setShowModal(true);
       setFormData({ name: "", email: "", message: "" });
@@ -132,6 +134,19 @@ function Footer() {
                   <p className="text-white font-medium">Abuja, Nigeria</p>
                 </div>
               </motion.div>
+
+              <motion.div
+                className="flex items-center gap-4 group cursor-pointer"
+                whileHover={{ x: 10 }}
+                transition={{ type: "spring", stiffness: 300 }}>
+                <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-shadow">
+                  <BsTelephoneOutbound className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-400">Phone</p>
+                  <p className="text-white font-medium">+234 813 855 3465</p>
+                </div>
+              </motion.div>
             </div>
 
             {/* Social links */}
@@ -150,6 +165,10 @@ function Footer() {
                 {
                   name: "twitter",
                   link: "https://x.com/Hardeygold205",
+                },
+                {
+                  name: "discord",
+                  link: "https://discord.com/hardeygold205",
                 },
               ].map((social, index) => (
                 <motion.a
@@ -170,8 +189,10 @@ function Footer() {
                       viewBox="0 0 24 24">
                       <path d={social.path} />
                     </svg>
-                  ) : (
+                  ) : social.name === "twitter" ? (
                     <RiTwitterXFill className="w-6 h-6" />
+                  ) : (
+                    <RiDiscordFill className="w-6 h-6" />
                   )}
                 </motion.a>
               ))}
