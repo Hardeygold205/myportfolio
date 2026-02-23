@@ -54,7 +54,7 @@ export const metadata = {
     siteName: "Hadi Ademola Portfolio",
     images: [
       {
-        url: "/home-page.png",
+        url: "/home-page2.png",
         width: 1200,
         height: 630,
         alt: "Hadi Ademola Portfolio Preview",
@@ -68,7 +68,7 @@ export const metadata = {
     title: "Hadi Ademola | Full-Stack Web & Mobile Developer Portfolio",
     description:
       "Professional portfolio showcasing my web development and mobile development and my other achievements",
-    images: ["/home-page.png"],
+    images: ["/home-page2.png"],
   },
   icons: {
     icon: "/7867852.png",
