@@ -14,12 +14,12 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 export default function HeroSection() {
   const words = [
     "Web Developer",
-    "Frontend Engineer",
-    "Mobile-App Developer",
+    "Software Engineer",
+    "Mobile Developer",
     "Full-Stack Developer",
   ];
 
-  const details = `I am a passionate and dedicated Frontend Engineer with a strong
+  const details = `I am a passionate and dedicated Software Engineer with a strong
               foundation in programming languages. I have a keen eye for detail
               and a strong ability to work well in a team.
 `;
