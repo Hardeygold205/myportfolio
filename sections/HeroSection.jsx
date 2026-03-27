@@ -13,10 +13,10 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export default function HeroSection() {
   const words = [
-    "Web Developer",
     "Software Engineer",
-    "Mobile Developer",
     "Full-Stack Developer",
+    "Web Developer",
+    "Mobile Developer",
   ];
 
   const details = `I am a passionate and dedicated Software Engineer with a strong
@@ -86,7 +86,7 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="p-5">
           <div className="flex flex-wrap gap-6 justify-between">
-            <InfoList number="4" text="Years of experience" />
+            <InfoList number="3" text="Years of experience" />
             <InfoList number="12" text="Technology mastered" />
             <InfoList number="14" text="Projects completed" />
             <InfoList number="806" text="Code commits" />
