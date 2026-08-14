@@ -1,11 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 :root {
   --font-JetBrains: "JetBrains Mono", monospace;
 }
 
 body {
   font-family: var(--font-JetBrains);
+  scroll-behavior: smooth;
 }

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { RiTwitterXFill, RiDiscordFill } from "react-icons/ri";
 import { BsTelephoneOutbound } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
 
 function Footer() {
   const form = useRef();
@@ -51,7 +52,7 @@ function Footer() {
   };
 
   return (
-    <footer className="relative text-white overflow-hidden bg-neutral-950">
+    <footer id="contact" className="relative text-white overflow-hidden bg-neutral-950">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 -top-48 -left-48 bg-green-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-green-500/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -67,7 +68,7 @@ function Footer() {
             className="space-y-8">
             <div>
               <motion.h2
-                className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-white to-green-700 bg-clip-text text-transparent"
+                className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-green to-green-700 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.02 }}>
                 Let&apos;s Connect
               </motion.h2>
@@ -109,7 +110,7 @@ function Footer() {
                 className="flex items-center gap-4 group cursor-pointer"
                 whileHover={{ x: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}>
-                <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-shadow">
+                <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-green-500/50 transition-shadow">
                   <svg
                     className="w-6 h-6"
                     fill="none"
@@ -139,7 +140,7 @@ function Footer() {
                 className="flex items-center gap-4 group cursor-pointer"
                 whileHover={{ x: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}>
-                <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-shadow">
+                <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-green-500/50 transition-shadow">
                   <BsTelephoneOutbound className="w-5 h-5" />
                 </div>
                 <div>
@@ -149,7 +150,6 @@ function Footer() {
               </motion.div>
             </div>
 
-            {/* Social links */}
             <div className="flex gap-4 pt-4">
               {[
                 {
@@ -291,49 +291,38 @@ function Footer() {
                   )}
                 </AnimatePresence>
 
-                {/* Submit button */}
                 <motion.button
-                  type="button"
                   onClick={sendEmail}
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-green-400 via-green-700 to-green-100 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          fill="none"></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </>
-                  )}
+                  className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+                  <span className="mr-2">
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="animate-spin h-5 w-5"
+                          viewBox="0 0 24 24">
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                            fill="none"></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>Send Message</>
+                    )}
+                  </span>
+                  <FaArrowRight className="transition-transform group-hover:translate-x-1" />
                 </motion.button>
               </div>
             </div>

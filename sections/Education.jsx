@@ -2,71 +2,70 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  LuBriefcase,
+  LuGraduationCap,
+  LuCalendar,
+  LuAward,
+  LuFolderCheck,
+  LuBookOpen,
+  LuLaptop,
+} from "react-icons/lu";
+import Image from "next/image";
 
-function TimelineItem({ item, index, isEducation }) {
-  const [isHovered, setIsHovered] = useState(false);
+function SectionIllustration({ title, subtitle, imagePath, reverse = false }) {
+  return (
+    <div className="sticky top-28 flex flex-col items-center justify-center">
+      <div className="relative w-full max-w-sm aspect-square flex items-center justify-center p-8 rounded-2xl bg-neutral-950/60 border border-neutral-800">
+        <Image
+          src={imagePath || "/assets/work-study-icon2.png"}
+          alt={`${title} Illustration`}
+          fill
+          className={`relative z-10 w-full h-full object-contain filter invert opacity-90 transition-transform duration-500 hover:scale-105 ${reverse ? "scale-x-[-1]" : ""}`}
+        />
+      </div>
+      <div className="mt-6 text-center">
+        <h4 className="text-xl font-bold text-white mb-1">{title}</h4>
+        <p className="text-sm text-neutral-400 max-w-sm">{subtitle}</p>
+      </div>
+    </div>
+  );
+}
 
+function TimelineCard({ item, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: isEducation ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="relative"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}>
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-pink-500/50 to-transparent md:left-1/2 md:-translate-x-1/2" />
+      className="relative pl-8 pb-10 last:pb-0 group">
+      <div className="absolute left-[11px] top-3 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-neutral-800 to-transparent group-last:hidden" />
 
-      <motion.div
-        className="absolute left-0 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-green-500 to-pink-500 border-4 border-slate-950 md:left-1/2 md:-translate-x-1/2 z-10"
-        animate={isHovered ? { scale: 1.5 } : { scale: 1 }}
-        transition={{ type: "spring", stiffness: 300 }}>
-        <motion.div
-          className="absolute inset-0 rounded-full bg-green-500"
-          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        />
-      </motion.div>
+      <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-neutral-950 border border-green-500/50 flex items-center justify-center group-hover:border-green-500 transition-colors">
+        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
+      </div>
 
-      <div
-        className={`ml-12 md:ml-0 ${
-          isEducation ? "md:pr-12 md:text-right" : "md:pl-12"
-        } ${!isEducation && "md:ml-auto"} md:w-1/2`}>
-        <motion.div
-          whileHover={{ scale: 1.02, y: -5 }}
-          className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300 overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="border border-neutral-800/80 bg-neutral-900/40 hover:border-neutral-700 backdrop-blur-xl rounded-2xl p-6 shadow-xl hover:shadow-green-500/5 transition-all duration-300">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-semibold">
+            <LuCalendar className="w-3.5 h-3.5" />
+            {item.year}
+          </span>
+          {item.icon && (
+            <div className="p-2 rounded-lg bg-neutral-800/50 text-green-400">
+              {item.icon}
+            </div>
+          )}
+        </div>
 
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", delay: index * 0.2 + 0.3 }}
-            viewport={{ once: true }}
-            className={`inline-block mb-4 px-4 py-1.5 bg-gradient-to-r from-green-500/20 to-pink-500/20 border border-green-500/30 rounded-full text-green-300 text-sm font-semibold ${
-              isEducation ? "md:float-right md:ml-4" : "md:float-left md:mr-4"
-            }`}>
-            📅 {item.year}
-          </motion.div>
-
-          <div className="relative z-10">
-            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">
-              {item.title}
-            </h3>
-            <p className="text-green-400 font-semibold mb-3 flex items-center gap-2 md:justify-start">
-              <span className="text-2xl">{item.icon}</span>
-              {item.role}
-            </p>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-
-          <div
-            className={`absolute ${
-              isEducation ? "top-0 right-0" : "top-0 left-0"
-            } w-20 h-20 bg-gradient-to-br from-green-500/20 to-transparent blur-2xl`}
-          />
-        </motion.div>
+        <h4 className="text-lg font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
+          {item.title}
+        </h4>
+        <p className="text-sm font-medium text-green-500 mb-3">{item.role}</p>
+        <p className="text-neutral-400 text-sm leading-relaxed">
+          {item.description}
+        </p>
       </div>
     </motion.div>
   );
@@ -75,93 +74,87 @@ function TimelineItem({ item, index, isEducation }) {
 export default function EducationExperience() {
   const [activeTab, setActiveTab] = useState("all");
 
-  const educationData = [
-    {
-      title: "University of Ibadan, Ibadan Nigeria",
-      role: "Bachelor of Science in Physics",
-      year: "2021 - 2025",
-      icon: "🎓",
-      description:
-        "Focused on theoretical and applied physics with research in quantum mechanics and computational physics.",
-    },
-    {
-      title: "ALX Africa",
-      role: "Software Engineer",
-      year: "2023 - 2024",
-      icon: "💻",
-      description:
-        "Intensive software engineering program covering full-stack development, algorithms, and system design.",
-    },
-    {
-      title: "FreeCodeCamp",
-      role: "Frontend Developer",
-      year: "2022 - 2023",
-      icon: "🎨",
-      description:
-        "Comprehensive frontend development curriculum including responsive design, JavaScript, and modern frameworks.",
-    },
-  ];
-
   const experienceData = [
-    {
-      title: "Branovax Technology",
-      role: "Full-Stack Developer & Team Lead",
-      year: "2025 - Present",
-      icon: "🎯",
-      description:
-        "Led a 3-member team to design and deploy custom web solutions for clients, utilizing NextJS with SEO Implemented.",
-    },
-    {
-      title: "Play2Score Organization",
-      role: "Frontend Mobile Developer",
-      year: "2025 - Present",
-      icon: "🎯",
-      description:
-        "Building a mobile and web application using React Native and Expo for an organization, integrated Supase for user authentication, real-time data, and notifications.",
-    },
     {
       title: "Extension Africa",
       role: "Frontend Developer (Internship)",
       year: "2025 - Present",
-      icon: "🎯",
+      icon: <LuLaptop className="w-4 h-4" />,
       description:
-        "Refractored and improved an old website for the organization, Designed onboarding, login/signup, forms and all UI with responsive layouts, Collaborated with a team of 13+ using Zoho and other social platform.",
+        "Refactored and improved the organization's web applications. Designed responsive onboarding flows, auth systems, and forms while collaborating in an agile team of 13+.",
+    },
+    {
+      title: "Play2Score Organization",
+      role: "Frontend Mobile Developer",
+      year: "May 2025 - Dec 2025",
+      icon: <LuLaptop className="w-4 h-4" />,
+      description:
+        "Built mobile and web applications using React Native & Expo. Integrated Supabase for real-time data synchronization, auth, and notifications.",
+    },
+    {
+      title: "Branovax Technology",
+      role: "Full-Stack Developer & Team Lead",
+      year: "Aug 2025 - April 2025",
+      icon: <LuLaptop className="w-4 h-4" />,
+      description:
+        "Led a 3-member development team to deliver custom client web apps built with Next.js and optimized SEO structures.",
     },
     {
       title: "ExcelExchange",
       role: "Full-Stack Developer",
       year: "2023 - 2025",
-      icon: "🚀",
+      icon: <LuLaptop className="w-4 h-4" />,
       description:
-        "Building scalable web applications with React, Node.js, and cloud technologies for financial technology solutions.",
+        "Built scalable web applications for fintech solutions using React, Node.js, and modern cloud deployment environments.",
     },
     {
       title: "Imaginarium Creative Global",
       role: "SIWES Intern",
       year: "2023 - 2024",
-      icon: "🎯",
+      icon: <LuLaptop className="w-4 h-4" />,
       description:
-        "Industrial training focused on creative design and web development, working on client projects and digital solutions.",
+        "Industrial training focused on creative design systems and web interface implementations for corporate clients.",
     },
     {
       title: "CampusRide Org.",
       role: "App Developer",
       year: "2024 - 2025",
-      icon: "📱",
+      icon: <LuLaptop className="w-4 h-4" />,
       description:
-        "Developing mobile applications for campus transportation solutions using React Native and modern technologies.",
+        "Engineered mobile transportation tracking applications for campus logistics using React Native.",
+    },
+  ];
+
+  const educationData = [
+    {
+      title: "University of Ibadan, Ibadan Nigeria",
+      role: "Bachelor of Science in Physics",
+      year: "2021 - 2025",
+      icon: <LuGraduationCap className="w-4 h-4" />,
+      description:
+        "Focused on theoretical & applied physics, with computational physics and mechanics research.",
+    },
+    {
+      title: "ALX Africa",
+      role: "Software Engineer",
+      year: "2023 - 2024",
+      icon: <LuLaptop className="w-4 h-4" />,
+      description:
+        "Intensive software engineering curriculum covering full-stack architecture, system design, and algorithms.",
+    },
+    {
+      title: "FreeCodeCamp",
+      role: "Frontend Developer",
+      year: "2022 - 2023",
+      icon: <LuLaptop className="w-4 h-4" />,
+      description:
+        "Comprehensive training in responsive web engineering, advanced JavaScript, and SPA frameworks.",
     },
   ];
 
   return (
-    <div className="relative py-20 bg-neutral-950 overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" />
-        <div
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        />
-      </div>
+    <section className="relative py-24 bg-neutral-950 text-white overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-green-500/5 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
@@ -169,163 +162,167 @@ export default function EducationExperience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16 space-y-6">
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-block mb-4">
-            <span className="px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-semibold">
-              📚 My Journey
-            </span>
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
-            Education & Experience
+          className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white bg-clip-text p-2">
+            Experience & Education
           </h2>
-
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A timeline of my academic achievements and professional experiences
-            that shaped my career
+            A chronological breakdown of my professional development and
+            academic foundation.
           </p>
         </motion.div>
+
+        <div className="flex justify-center gap-2 mb-16">
+          {[
+            {
+              id: "all",
+              label: "Overview",
+            },
+            {
+              id: "experience",
+              label: "Experience",
+              icon: <LuBriefcase className="w-4 h-4" />,
+            },
+            {
+              id: "education",
+              label: "Education",
+              icon: <LuGraduationCap className="w-4 h-4" />,
+            },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "bg-white text-black shadow-lg shadow-white/10"
+                  : "bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800"
+              }`}>
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          <div className="space-y-24">
+            {(activeTab === "all" || activeTab === "experience") && (
+              <motion.div
+                key="experience-section"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="p-2.5 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400">
+                    <LuBriefcase className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold">
+                    Work Experience
+                  </h3>
+                  <div className="flex-1 h-px bg-neutral-800 ml-2" />
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                  <div className="lg:col-span-7">
+                    {(activeTab === "all"
+                      ? experienceData.slice(0, 3)
+                      : experienceData
+                    ).map((item, index) => (
+                      <TimelineCard key={index} item={item} index={index} />
+                    ))}
+                  </div>
+
+                  <div className="hidden lg:block lg:col-span-5">
+                    <SectionIllustration
+                      title="Software Engineering"
+                      subtitle="Building high-impact frontend web & mobile platforms."
+                      imagePath="/assets/work-study-icon2.png"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {(activeTab === "all" || activeTab === "education") && (
+              <motion.div
+                key="education-section"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="p-2.5 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400">
+                    <LuGraduationCap className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold">
+                    Education & Training
+                  </h3>
+                  <div className="flex-1 h-px bg-neutral-800 ml-2" />
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                  <div className="hidden lg:block lg:col-span-5">
+                    <SectionIllustration
+                      title="Academic Foundation"
+                      subtitle="Physics, computational thinking, and software methodologies."
+                      imagePath="/assets/work-study-icon2.png"
+                      reverse={true}
+                    />
+                  </div>
+
+                  <div className="lg:col-span-7">
+                    {educationData.map((item, index) => (
+                      <TimelineCard key={index} item={item} index={index} />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </AnimatePresence>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-16 w-full">
+          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { id: "all", label: "All", icon: "📊" },
-            { id: "education", label: "Education", icon: "🎓" },
-            { id: "experience", label: "Experience", icon: "💼" },
-          ].map((tab) => (
-            <motion.button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-lg md:rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
-                activeTab === tab.id
-                  ? "bg-gradient-to-r from-green-500 to-pink-500 text-white shadow-lg shadow-green-500/50"
-                  : "bg-white/5 text-gray-400 border border-white/10 hover:border-green-500/50"
-              }`}>
-              <span className="text-base md:text-lg">{tab.icon}</span>
-              {tab.label}
-            </motion.button>
-          ))}
-        </motion.div>
-
-        <div className="relative">
-          <AnimatePresence mode="sync">
-            {(activeTab === "all" || activeTab === "education") && (
-              <motion.div
-                key="education"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="space-y-12 mb-16">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 mb-8">
-                  <h3 className="text-3xl font-bold text-white flex items-center gap-3">
-                    <span className="text-4xl">🎓</span>
-                    Education
-                  </h3>
-                  <div className="flex-1 h-px bg-gradient-to-r from-green-500 to-transparent" />
-                </motion.div>
-
-                {educationData.map((item, index) => (
-                  <TimelineItem
-                    key={index}
-                    item={item}
-                    index={index}
-                    isEducation={true}
-                  />
-                ))}
-              </motion.div>
-            )}
-
-            {(activeTab === "all" || activeTab === "experience") && (
-              <motion.div
-                key="experience"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="space-y-12">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4 mb-8">
-                  <h3 className="text-3xl font-bold text-white flex items-center gap-3">
-                    <span className="text-4xl">💼</span>
-                    Experience
-                  </h3>
-                  <div className="flex-1 h-px bg-gradient-to-r from-pink-500 to-transparent" />
-                </motion.div>
-
-                {activeTab === "experience"
-                  ? experienceData.map((item, index) => (
-                      <TimelineItem
-                        key={index}
-                        item={item}
-                        index={index}
-                        isEducation={false}
-                      />
-                    ))
-                  : experienceData
-                      .slice(0, 3)
-                      .map((item, index) => (
-                        <TimelineItem
-                          key={index}
-                          item={item}
-                          index={index}
-                          isEducation={false}
-                        />
-                      ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { number: "3", label: "Certifications", icon: "🏆" },
-            { number: "6+", label: "Work Experiences", icon: "💼" },
-            { number: "5+", label: "Years Learning", icon: "📚" },
-            { number: "12+", label: "Projects Completed", icon: "🚀" },
+            {
+              number: "3",
+              label: "Certifications",
+              icon: <LuAward className="w-6 h-6 text-green-400" />,
+            },
+            {
+              number: "6+",
+              label: "Work Experiences",
+              icon: <LuBriefcase className="w-6 h-6 text-green-400" />,
+            },
+            {
+              number: "5+",
+              label: "Years Learning",
+              icon: <LuBookOpen className="w-6 h-6 text-green-400" />,
+            },
+            {
+              number: "12+",
+              label: "Projects Completed",
+              icon: <LuFolderCheck className="w-6 h-6 text-green-400" />,
+            },
           ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                delay: index * 0.1,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center hover:border-green-500/50 transition-all duration-300">
-              <div className="text-4xl mb-3">{stat.icon}</div>
-              <motion.h4 className="text-4xl font-bold bg-gradient-to-r from-green-400 to-pink-400 bg-clip-text text-transparent mb-2">
+            <div
+              key={index}
+              className="bg-neutral-900/40 border border-neutral-800 hover:border-green-500/40 backdrop-blur-xl rounded-2xl p-6 text-center transition-all duration-300">
+              <div className="flex justify-center mb-3">{stat.icon}</div>
+              <h4 className="text-3xl font-extrabold text-white mb-1">
                 {stat.number}
-              </motion.h4>
-              <p className="text-gray-400 text-sm">{stat.label}</p>
-            </motion.div>
+              </h4>
+              <p className="text-xs md:text-sm font-medium text-neutral-400">
+                {stat.label}
+              </p>
+            </div>
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

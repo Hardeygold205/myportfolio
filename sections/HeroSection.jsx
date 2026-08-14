@@ -45,33 +45,47 @@ export default function HeroSection() {
                 <TextGenerateEffect details={details} />
               </div>
               <div className="flex flex-col md:flex-row items-center md:justify-between justify-center gap-8">
-                <a href="/Hadi_Ademola.pdf" download="Hadi_Ademola_Resume">
-                  <button className="btn btn-outline btn-success uppercase p-3 flex items-center gap-2">
-                    <span className="text-green-500">download cv</span>
-                    <FiDownload className="text-xl" />
-                  </button>
+                <a
+                  href="/Hadi_Ademola.pdf"
+                  download="Hadi_Ademola_Resume"
+                  className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-transparent border border-green-500 py-2 px-2 md:px-3 lg:px-4 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+                  <span className="mr-2 uppercase">download cv</span>
+                  <FiDownload className="text-xl transition-transform group-hover:scale-90" />
                 </a>
-                <div className="flex gap-4 items-center">
-                  <Link
-                    href="https://discord.com/hardeygold205"
-                    className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                    <FaDiscord className="text-xl text-green-500 hover:text-white" />
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/in/hardeygold205/"
-                    className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                    <FaLinkedin className="text-xl text-green-500 hover:text-white" />
-                  </Link>
-                  <Link
-                    href="https://github.com/Hardeygold205"
-                    className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                    <FaGithub className="text-xl text-green-500 hover:text-white" />
-                  </Link>
-                  <Link
-                    href="https://x.com/Hardeygold205"
-                    className="p-1 border rounded-full border-green-500 hover:bg-green-500">
-                    <FaXTwitter className="text-xl text-green-500 hover:text-white" />
-                  </Link>
+                <div className="flex flex-row gap-4 items-center">
+                  {[
+                    {
+                      name: "discord",
+                      icon: <FaDiscord />,
+                      href: "https://discord.com/hardeygold205",
+                    },
+                    {
+                      name: "linkedin",
+                      icon: <FaLinkedin />,
+                      href: "https://www.linkedin.com/in/hardeygold205/",
+                    },
+                    {
+                      name: "github",
+                      icon: <FaGithub />,
+                      href: "https://github.com/Hardeygold205",
+                    },
+                    {
+                      name: "twitter",
+                      icon: <FaXTwitter />,
+                      href: "https://x.com/Hardeygold205",
+                    },
+                  ].map(({ name, icon, href }, index) => (
+                    <div className="group" key={index}>
+                      <Link
+                        href={href}
+                        className="group flex items-center justify-center border rounded-lg p-2 border-green-500 group-hover:bg-green-500 transition-all duration-300"
+                        key={index}>
+                        <div className="text-xl text-green-500 group-hover:text-white">
+                          {icon}
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -85,10 +99,12 @@ export default function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="p-5">
-          <div className="flex flex-wrap gap-6 justify-between">
-            <InfoList number="3" text="Years of experience" />
-            <InfoList number="12" text="Technology mastered" />
-            <InfoList number="14" text="Projects completed" />
+          <div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full
+          ">
+            <InfoList number="4" text="Years of experience" />
+            <InfoList number="20" text="Technology mastered" />
+            <InfoList number="12" text="Projects completed" />
             <InfoList number="806" text="Code commits" />
           </div>
         </motion.div>

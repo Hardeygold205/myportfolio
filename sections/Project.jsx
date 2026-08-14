@@ -15,18 +15,7 @@ export default function Project() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16 space-y-6">
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-block mb-4">
-            <span className="px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-semibold">
-              📚 My Works
-            </span>
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white bg-clip-text p-2">
             Featured Projects
           </h2>
 
@@ -95,25 +84,46 @@ function ProjectCard({ project }) {
 
 export const projects = [
   {
-    title: "NotifyBot",
+    title: "Noreta Farms",
     description:
-      "A telegram bot that notifies based on user set keywords. The Bot can be used in all group chat.",
-    link: "https://github.com/Hardeygold205/NottifyBot",
-    language: ["NodeJs", "Telegram API"],
+      "Production-ready corporate website built with Next.js, featuring optimized performance, a responsive UI, and SEO best practices. Deployed on a Linux server with PM2, managed environment variables, SSH authentication, and automated CI/CD via GitHub Actions for zero-touch deployments.",
+    link: "https://noretafarms.com",
+    language: [
+      "Next.js",
+      "TailwindCSS",
+      "Node.js",
+      "PM2",
+      "GitHub Actions",
+      "Nginx",
+    ],
   },
   {
-    title: "ExcelExchange App",
+    title: "Extension Africa Academy",
+    description:
+      "Learning platform integrating a Next.js frontend with a Moodle LMS backend, providing seamless authentication and course access. Configured Apache for production, and automated deployments using GitHub Actions and PM2.",
+    link: "https://academy.extensionafrica.com",
+    language: ["Next.js", "Moodle (PHP)", "PM2", "Apache", "GitHub Actions"],
+  },
+  {
+    title: "Play2score App",
+    description:
+      "Cross-platform mobile application with real-time features, authentication, push notifications, and an offline-friendly user experience. Integrated Supabase services and backend APIs in a Git-based team workflow.",
+    link: "https://play2score.net",
+    language: ["React Native", "Expo Router", "Supabase", "Firebase"],
+  },
+  {
+    title: "Auth System API",
+    description:
+      "Scalable authentication service with JWT-based access control and refresh token rotation. Implemented Redis caching to improve performance and secure session management.",
+    link: "https://github.com/Hardeygold205/auth-service-api",
+    language: ["Node.js", "Express.js", "Redis", "PostgreSQL", "Docker"],
+  },
+  {
+    title: "ExcelExchange",
     description:
       "This is an Exchange App where users can buy and sell cryptocurrencies and digital funds with their local currency.",
-    link: "https://github.com/Hardeygold205/ExcelApp",
-    language: ["React Native", "Redux"],
-  },
-  {
-    title: "Twitter Gain App",
-    description:
-      "This is a twitter gain web app where you can connect with people, basically for following one another on Twitter.",
-    link: "https://github.com/Hardeygold205/twitter-gain-app",
-    language: ["HTML", "CSS", "JS"],
+    link: "https://excelexchange.vercel.app",
+    language: ["React", "Next.js", "TailwindCSS", "Node.js", "MongoDB"],
   },
   {
     title: "CoinBitExtension DApps",
@@ -121,19 +131,5 @@ export const projects = [
       "A technology built with React and ExpressJS where users can interact with web3 DAPS.",
     link: "https://coinbit-extension.vercel.app",
     language: ["React", "ExpressJS", "Web3.js"],
-  },
-  {
-    title: "My Portfolio",
-    description:
-      "This is my personal portfolio where you can know about me, my skills, my projects and all...",
-    link: "https://github.com/Hardeygold205/myportfolio",
-    language: ["NextJs", "Tailwind"],
-  },
-  {
-    title: "CampusRide App",
-    description:
-      "Ride made easy with CampusRide. A riding app where users can connect to drivers and book rides.",
-    link: "https://github.com/Hardeygold205/CampusRide",
-    language: ["React Native", "Firebase"],
   },
 ];

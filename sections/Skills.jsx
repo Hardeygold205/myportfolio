@@ -2,58 +2,68 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPhp,
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiVuedotjs,
+  SiLivewire,
+  SiFramer,
+  SiNodedotjs,
+  SiExpress,
+  SiNestjs,
+  SiLaravel,
+  SiPostgresql,
+  SiMongodb,
+  SiMysql,
+  SiRedis,
+  SiSupabase,
+  SiFirebase,
+  SiGit,
+  SiGithubactions,
+  SiWordpress,
+  SiDocker,
+  SiLinux,
+  SiPm2,
+  SiApache,
+  SiNginx,
+  SiVercel,
+  SiCpanel,
+  SiCloudflare,
+} from "react-icons/si";
+import { TbBrandReactNative, TbTerminal2 } from "react-icons/tb";
+import { FaLayerGroup } from "react-icons/fa";
+import Link from "next/link";
 
-function SkillCard({ skill, icon, category, color, delay }) {
+function SkillCard({ skill, icon: Icon, category, color }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      viewport={{ once: true }}
-      whileHover={{ scale: 1.05, y: -5 }}
+      whileHover={{ y: -5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative group">
-      <div
-        className={`relative bg-gradient-to-br ${color} p-6 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden`}>
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          animate={
-            isHovered ? { scale: 1.5, rotate: 45 } : { scale: 1, rotate: 0 }
-          }
-          transition={{ duration: 0.6 }}
-        />
-
+      className="group relative">
+      <div className="group relative flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 hover:border-neutral-600 hover:bg-neutral-900 transition-all duration-300">
         <div className="relative z-10 flex flex-col items-center gap-3">
           <motion.div
             animate={isHovered ? { rotate: [0, -10, 10, -10, 0] } : {}}
             transition={{ duration: 0.5 }}
-            className="text-5xl">
-            {icon}
+            className="text-5xl"
+            style={{ color }}>
+            <Icon />
           </motion.div>
           <h3 className="text-white font-semibold text-lg">{skill}</h3>
           <span className="text-xs text-white/70 uppercase tracking-wider">
             {category}
           </span>
         </div>
-
-        {/* Glow effect */}
-        <motion.div
-          className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle at center, ${
-              color.includes("green")
-                ? "#a855f7"
-                : color.includes("blue")
-                ? "#3b82f6"
-                : color.includes("green")
-                ? "#10b981"
-                : "#f59e0b"
-            }, transparent)`,
-          }}
-        />
       </div>
     </motion.div>
   );
@@ -97,61 +107,208 @@ export default function Skills() {
   const skillCategories = [
     {
       category: "Languages",
-      color: "from-green-600 to-green-800",
       skills: [
-        { name: "HTML", icon: "🌐", category: "Markup" },
-        { name: "CSS", icon: "🎨", category: "Styling" },
-        { name: "JavaScript", icon: "⚡", category: "Programming" },
-        { name: "TypeScript", icon: "📘", category: "Programming" },
-        { name: "Python", icon: "🐍", category: "Programming" },
+        {
+          name: "JavaScript",
+          icon: SiJavascript,
+          category: "ES6+",
+          color: "#F7DF1E",
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+          category: "Programming",
+          color: "#3178C6",
+        },
+        { name: "PHP", icon: SiPhp, category: "Programming", color: "#777BB4" },
+        { name: "HTML", icon: SiHtml5, category: "Markup", color: "#E34F26" },
+        { name: "CSS", icon: SiCss3, category: "Styling", color: "#1572B6" },
       ],
     },
     {
-      category: "Frameworks & Libraries",
-      color: "from-green-600 to-green-800",
+      category: "Frontend & Frameworks",
       skills: [
-        { name: "React", icon: "⚛️", category: "Frontend" },
-        { name: "React Native", icon: "📱", category: "Mobile" },
-        { name: "Next.js", icon: "▲", category: "Full-stack" },
-        { name: "Express.js", icon: "🚂", category: "Backend" },
-        { name: "TailwindCSS", icon: "💨", category: "Styling" },
+        {
+          name: "React",
+          icon: SiReact,
+          category: "Frontend",
+          color: "#61DAFB",
+        },
+        {
+          name: "React Native",
+          icon: TbBrandReactNative,
+          category: "Mobile",
+          color: "#61DAFB",
+        },
+        {
+          name: "Next.js",
+          icon: SiNextdotjs,
+          category: "Full-stack",
+          color: "#FFFFFF",
+        },
+        {
+          name: "TailwindCSS",
+          icon: SiTailwindcss,
+          category: "Styling",
+          color: "#06B6D4",
+        },
+        {
+          name: "Vue.js",
+          icon: SiVuedotjs,
+          category: "Frontend",
+          color: "#4FC08D",
+        },
+        {
+          name: "Livewire",
+          icon: SiLivewire,
+          category: "Frontend",
+          color: "#FB70A9",
+        },
+        {
+          name: "Framer Motion",
+          icon: SiFramer,
+          category: "Animation",
+          color: "#0055FF",
+        },
       ],
     },
     {
-      category: "Database & Tools",
-      color: "from-green-600 to-green-800",
+      category: "Backend & Frameworks",
       skills: [
-        { name: "MongoDB", icon: "🍃", category: "NoSQL" },
-        { name: "PostgreSQL", icon: "🐘", category: "SQL" },
-        { name: "Redux", icon: "🔄", category: "State" },
-        { name: "Web3.js", icon: "⛓️", category: "Blockchain" },
-        { name: "Git", icon: "📦", category: "Version Control" },
+        {
+          name: "Node.js",
+          icon: SiNodedotjs,
+          category: "Backend",
+          color: "#5FA04E",
+        },
+        {
+          name: "Express.js",
+          icon: SiExpress,
+          category: "Backend",
+          color: "#FFFFFF",
+        },
+        {
+          name: "NestJS",
+          icon: SiNestjs,
+          category: "Backend",
+          color: "#E0234E",
+        },
+        {
+          name: "Laravel",
+          icon: SiLaravel,
+          category: "Backend",
+          color: "#FF2D20",
+        },
+        {
+          name: "Filament",
+          icon: FaLayerGroup,
+          category: "Admin Panel",
+          color: "#FDAE4B",
+        },
       ],
     },
-  ];
-
-  const scrollingSkills = [
-    { title: "HTML", icon: "🌐" },
-    { title: "CSS", icon: "🎨" },
-    { title: "JavaScript", icon: "⚡" },
-    { title: "TypeScript", icon: "📘" },
-    { title: "React", icon: "⚛️" },
-    { title: "Next.js", icon: "▲" },
-    { title: "Node.js", icon: "💚" },
-    { title: "Python", icon: "🐍" },
-    { title: "MongoDB", icon: "🍃" },
-    { title: "PostgreSQL", icon: "🐘" },
-    { title: "Tailwind", icon: "💨" },
-    { title: "Git", icon: "📦" },
+    {
+      category: "Databases",
+      skills: [
+        {
+          name: "PostgreSQL",
+          icon: SiPostgresql,
+          category: "SQL",
+          color: "#4169E1",
+        },
+        {
+          name: "MongoDB",
+          icon: SiMongodb,
+          category: "NoSQL",
+          color: "#47A248",
+        },
+        { name: "MySQL", icon: SiMysql, category: "SQL", color: "#4479A1" },
+        { name: "Redis", icon: SiRedis, category: "Cache", color: "#FF4438" },
+        {
+          name: "Supabase",
+          icon: SiSupabase,
+          category: "BaaS",
+          color: "#3ECF8E",
+        },
+        {
+          name: "Firebase",
+          icon: SiFirebase,
+          category: "BaaS",
+          color: "#FFCA28",
+        },
+      ],
+    },
+    {
+      category: "Server, Tools & Platforms",
+      skills: [
+        {
+          name: "Git",
+          icon: SiGit,
+          category: "Version Control",
+          color: "#F05032",
+        },
+        {
+          name: "GitHub Actions",
+          icon: SiGithubactions,
+          category: "CI/CD",
+          color: "#2088FF",
+        },
+        {
+          name: "WordPress",
+          icon: SiWordpress,
+          category: "CMS",
+          color: "#21759B",
+        },
+        {
+          name: "Docker",
+          icon: SiDocker,
+          category: "Containers",
+          color: "#2496ED",
+        },
+        { name: "Linux", icon: SiLinux, category: "OS", color: "#FCC624" },
+        {
+          name: "SSH",
+          icon: TbTerminal2,
+          category: "Server",
+          color: "#4EAA25",
+        },
+        {
+          name: "PM2",
+          icon: SiPm2,
+          category: "Process Manager",
+          color: "#2B037A",
+        },
+        {
+          name: "Apache",
+          icon: SiApache,
+          category: "Server",
+          color: "#D22128",
+        },
+        { name: "Nginx", icon: SiNginx, category: "Server", color: "#009639" },
+        {
+          name: "Vercel",
+          icon: SiVercel,
+          category: "Deployment",
+          color: "#FFFFFF",
+        },
+        {
+          name: "cPanel",
+          icon: SiCpanel,
+          category: "Hosting",
+          color: "#FF6C2C",
+        },
+        {
+          name: "Cloudflare",
+          icon: SiCloudflare,
+          category: "DNS/CDN",
+          color: "#F38020",
+        },
+      ],
+    },
   ];
 
   return (
     <div id="skills" className="relative py-20 overflow-hidden bg-neutral-950">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-500 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -159,18 +316,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16 space-y-6">
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-block mb-4">
-            <span className="px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-semibold">
-              💼 My Expertise
-            </span>
-          </motion.div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  from-green-400 via-white to-green-700 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white p-2">
             Skills & Technologies
           </h2>
 
@@ -180,7 +326,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {skillCategories.map((category, categoryIndex) => (
+        {skillCategories.map((category) => (
           <div key={category.category} className="mb-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -189,20 +335,18 @@ export default function Skills() {
               viewport={{ once: true }}
               className="mb-8">
               <h3 className="text-3xl font-bold text-white mb-2 flex items-center gap-3">
-                <span className="w-12 h-1 bg-gradient-to-r from-green-500 to-pink-500 rounded-full" />
+                <span className="w-12 h-1 bg-green-500 rounded-full" />
                 {category.category}
               </h3>
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {category.skills.map((skill, index) => (
+              {category.skills.map((skill) => (
                 <SkillCard
                   key={skill.name}
                   skill={skill.name}
                   icon={skill.icon}
                   category={skill.category}
-                  color={category.color}
-                  delay={index * 0.1}
                 />
               ))}
             </div>
@@ -217,7 +361,7 @@ export default function Skills() {
           className="h-px bg-gradient-to-r from-transparent via-green-500 to-transparent my-16"
         />
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -232,7 +376,7 @@ export default function Skills() {
           skills={scrollingSkills}
           direction="left"
           speed={30}
-        />
+        /> */}
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -240,28 +384,12 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="mt-16 text-center">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block">
-            <a
-              href="#contact"
-              className="px-8 py-4 bg-gradient-to-r from-green-500 via-green-700 to-white rounded-full text-white font-semibold hover:shadow-lg hover:shadow-green-500/50 transition-all inline-flex items-center gap-2">
-              Let&apos;s Build Something Amazing
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </motion.div>
+          <Link
+            href="#contact"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+            <span className="mr-2">Let&apos;s Build Something Amazing</span>
+            <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </div>

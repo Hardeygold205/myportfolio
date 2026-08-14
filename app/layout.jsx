@@ -79,8 +79,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html data-theme="cupcake" lang="en">
-      <body className={`${JetBrains.className} font-sans antialiased `}>
+    <html data-theme="cupcake" lang="en" className={JetBrains.variable}>
+      <body className="font-JetBrains antialiased">
         <ThemeProvider>
           <Navbar />
           {children}

@@ -28,6 +28,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        JetBrains: ["var(--font-JetBrains)"],
+      },
       colors: {
         custom: "#B6B6B64d",
       },
@@ -65,7 +68,7 @@ module.exports = {
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
   addBase({
     ":root": newVars,
