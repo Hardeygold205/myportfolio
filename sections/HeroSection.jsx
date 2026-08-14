@@ -25,8 +25,8 @@ export default function HeroSection() {
 `;
 
   return (
-    <div className="bg-neutral-950">
-      <div id="about" className="mx-auto max-w-6xl text-white">
+    <div className="bg-white dark:bg-neutral-950 transition-colors duration-300">
+      <div id="about" className="mx-auto max-w-6xl text-neutral-900 dark:text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function HeroSection() {
                 <a
                   href="/Hadi_Ademola.pdf"
                   download="Hadi_Ademola_Resume"
-                  className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-transparent border border-green-500 py-2 px-2 md:px-3 lg:px-4 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+                  className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-transparent border border-green-500 py-2 px-2 md:px-3 lg:px-4 font-medium text-neutral-700 dark:text-neutral-200 transition-all duration-300 hover:bg-green-500 hover:text-white dark:hover:bg-white dark:hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-neutral-900">
                   <span className="mr-2 uppercase">download cv</span>
                   <FiDownload className="text-xl transition-transform group-hover:scale-90" />
                 </a>
@@ -78,7 +78,7 @@ export default function HeroSection() {
                     <div className="group" key={index}>
                       <Link
                         href={href}
-                        className="group flex items-center justify-center border rounded-lg p-2 border-green-500 group-hover:bg-green-500 transition-all duration-300"
+                        className="group flex items-center justify-center border rounded-lg p-2 border-green-500 group-hover:bg-green-500 transition-all duration-300 dark:group-hover:bg-green-500"
                         key={index}>
                         <div className="text-xl text-green-500 group-hover:text-white">
                           {icon}

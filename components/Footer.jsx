@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { RiTwitterXFill, RiDiscordFill } from "react-icons/ri";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 function Footer() {
   const form = useRef();
@@ -12,6 +13,11 @@ function Footer() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -52,7 +58,9 @@ function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative text-white overflow-hidden bg-neutral-950">
+    <footer
+      id="contact"
+      className="relative text-neutral-900 dark:text-white overflow-hidden bg-white dark:bg-neutral-950 transition-colors duration-300">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 -top-48 -left-48 bg-green-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-green-500/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -72,7 +80,7 @@ function Footer() {
                 whileHover={{ scale: 1.02 }}>
                 Let&apos;s Connect
               </motion.h2>
-              <p className="text-gray-300 text-md md:text-lg leading-relaxed">
+              <p className="text-neutral-600 dark:text-gray-300 text-md md:text-lg leading-relaxed">
                 Have a project in mind or just want to chat? I&apos;d love to
                 hear from you. Drop me a message and I&apos;ll get back to you
                 as soon as possible.
@@ -99,8 +107,10 @@ function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Email</p>
-                  <p className="text-white font-medium">
+                  <p className="text-sm text-neutral-500 dark:text-gray-400">
+                    Email
+                  </p>
+                  <p className="text-neutral-900 dark:text-white font-medium">
                     hadiademola@gmail.com
                   </p>
                 </div>
@@ -131,8 +141,12 @@ function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Location</p>
-                  <p className="text-white font-medium">Abuja, Nigeria</p>
+                  <p className="text-sm text-neutral-500 dark:text-gray-400">
+                    Location
+                  </p>
+                  <p className="text-neutral-900 dark:text-white font-medium">
+                    Abuja, Nigeria
+                  </p>
                 </div>
               </motion.div>
 
@@ -144,8 +158,12 @@ function Footer() {
                   <BsTelephoneOutbound className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Phone</p>
-                  <p className="text-white font-medium">+234 813 855 3465</p>
+                  <p className="text-sm text-neutral-500 dark:text-gray-400">
+                    Phone
+                  </p>
+                  <p className="text-neutral-900 dark:text-white font-medium">
+                    +234 813 855 3465
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -174,7 +192,7 @@ function Footer() {
                 <motion.a
                   key={social.name}
                   href={social.link}
-                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-12 h-12 bg-neutral-100 dark:bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-neutral-200 dark:hover:bg-white/20 transition-colors"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -205,7 +223,7 @@ function Footer() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}>
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 shadow-2xl">
+            <div className="bg-neutral-50 dark:bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-neutral-200 dark:border-white/10 shadow-2xl">
               <div className="space-y-6">
                 {/* Name field */}
                 <div className="relative">
@@ -213,8 +231,8 @@ function Footer() {
                     htmlFor="name"
                     className={`absolute left-4 transition-all duration-200 pointer-events-none ${
                       focusedField === "name" || formData.name
-                        ? "-top-2.5 text-xs bg-slate-900 px-2 text-green-400"
-                        : "top-4 text-gray-400"
+                        ? "-top-2.5 text-xs bg-white dark:bg-slate-900 px-2 text-green-500 dark:text-green-400"
+                        : "top-4 text-neutral-500 dark:text-gray-400"
                     }`}>
                     Your Name
                   </label>
@@ -227,7 +245,7 @@ function Footer() {
                     required
                     onFocus={() => setFocusedField("name")}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-white placeholder-transparent"
+                    className="w-full px-4 py-4 bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/20 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-neutral-900 dark:text-white placeholder-transparent"
                   />
                 </div>
 
@@ -237,8 +255,8 @@ function Footer() {
                     htmlFor="email"
                     className={`absolute left-4 transition-all duration-200 pointer-events-none ${
                       focusedField === "email" || formData.email
-                        ? "-top-2.5 text-xs bg-slate-900 px-2 text-green-400"
-                        : "top-4 text-gray-400"
+                        ? "-top-2.5 text-xs bg-white dark:bg-slate-900 px-2 text-green-500 dark:text-green-400"
+                        : "top-4 text-neutral-500 dark:text-gray-400"
                     }`}>
                     Your Email
                   </label>
@@ -251,7 +269,7 @@ function Footer() {
                     required
                     onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-white placeholder-transparent"
+                    className="w-full px-4 py-4 bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/20 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-neutral-900 dark:text-white placeholder-transparent"
                   />
                 </div>
 
@@ -261,8 +279,8 @@ function Footer() {
                     htmlFor="message"
                     className={`absolute left-4 transition-all duration-200 pointer-events-none ${
                       focusedField === "message" || formData.message
-                        ? "-top-2.5 text-xs bg-slate-900 px-2 text-green-400"
-                        : "top-4 text-gray-400"
+                        ? "-top-2.5 text-xs bg-white dark:bg-slate-900 px-2 text-green-500 dark:text-green-400"
+                        : "top-4 text-neutral-500 dark:text-gray-400"
                     }`}>
                     Your Message
                   </label>
@@ -275,7 +293,7 @@ function Footer() {
                     required
                     onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-4 bg-white/5 border border-white/20 rounded-lg focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-white resize-none placeholder-transparent"></textarea>
+                    className="w-full px-4 py-4 bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/20 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all text-neutral-900 dark:text-white resize-none placeholder-transparent"></textarea>
                 </div>
 
                 {/* Feedback message */}
@@ -296,7 +314,7 @@ function Footer() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+                  className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-800 dark:text-neutral-200 transition-all duration-300 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-neutral-900">
                   <span className="mr-2">
                     {isSubmitting ? (
                       <>
@@ -334,11 +352,17 @@ function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-16 pt-8 border-t border-white/10 text-center">
-          <p className="text-gray-400 flex items-center justify-center gap-2">
+          className="mt-16 pt-8 border-t border-neutral-200 dark:border-white/10 text-center flex flex-col gap-3">
+          <p className="text-neutral-500 dark:text-gray-400 flex items-center justify-center gap-2">
             © {new Date().getFullYear()} Hadi Ademola.
             <br className="flex md:hidden" /> Crafted with ❤️ and passion
           </p>
+          <Link
+            className="text-neutral-500 dark:text-gray-400 text-sm hover:underline"
+            onClick={scrollToTop}
+            href="#">
+            Back to top
+          </Link>
         </motion.div>
       </div>
 

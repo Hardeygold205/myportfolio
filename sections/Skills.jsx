@@ -50,7 +50,7 @@ function SkillCard({ skill, icon: Icon, category, color }) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className="group relative">
-      <div className="group relative flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 hover:border-neutral-600 hover:bg-neutral-900 transition-all duration-300">
+      <div className="group relative flex flex-col justify-between rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 p-6 hover:border-neutral-300 dark:hover:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all duration-300">
         <div className="relative z-10 flex flex-col items-center gap-3">
           <motion.div
             animate={isHovered ? { rotate: [0, -10, 10, -10, 0] } : {}}
@@ -59,8 +59,8 @@ function SkillCard({ skill, icon: Icon, category, color }) {
             style={{ color }}>
             <Icon />
           </motion.div>
-          <h3 className="text-white font-semibold text-lg">{skill}</h3>
-          <span className="text-xs text-white/70 uppercase tracking-wider">
+          <h3 className="text-neutral-900 dark:text-white font-semibold text-lg">{skill}</h3>
+          <span className="text-xs text-neutral-500 dark:text-white/70 uppercase tracking-wider">
             {category}
           </span>
         </div>
@@ -308,7 +308,7 @@ export default function Skills() {
   ];
 
   return (
-    <div id="skills" className="relative py-20 overflow-hidden bg-neutral-950">
+    <div id="skills" className="relative py-20 overflow-hidden bg-white dark:bg-neutral-950 transition-colors duration-300">
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -316,11 +316,11 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white p-2">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white p-2">
             Skills & Technologies
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             A comprehensive toolkit of modern technologies and frameworks I use
             to build exceptional digital experiences
           </p>
@@ -334,7 +334,7 @@ export default function Skills() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
               className="mb-8">
-              <h3 className="text-3xl font-bold text-white mb-2 flex items-center gap-3">
+              <h3 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2 flex items-center gap-3">
                 <span className="w-12 h-1 bg-green-500 rounded-full" />
                 {category.category}
               </h3>
@@ -386,7 +386,7 @@ export default function Skills() {
           className="mt-16 text-center">
           <Link
             href="#contact"
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-800 dark:text-neutral-200 transition-all duration-300 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-neutral-900">
             <span className="mr-2">Let&apos;s Build Something Amazing</span>
             <FaArrowRight className="transition-transform group-hover:translate-x-1" />
           </Link>

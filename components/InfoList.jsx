@@ -12,7 +12,7 @@ function InfoList({ number, text }) {
       <p
         className={`${
           text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-        } text-sm leading-snug`}>
+        } text-sm leading-snug text-neutral-600 dark:text-neutral-300`}>
         {text}
       </p>
     </div>

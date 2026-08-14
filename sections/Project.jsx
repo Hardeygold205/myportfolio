@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Project() {
   return (
-    <section id="projects" className="py-20 bg-neutral-950 text-white">
+    <section id="projects" className="py-20 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,11 +15,11 @@ export default function Project() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white bg-clip-text p-2">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900 dark:text-white bg-clip-text p-2">
             Featured Projects
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-neutral-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             A collection of applications and tools I&apos;ve built to solve
             problems and explore new technologies.
           </p>
@@ -33,7 +33,7 @@ export default function Project() {
 
         <div className="flex justify-center">
           <Link href="https://github.com/Hardeygold205" target="_blank">
-            <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-200 transition-all duration-300 hover:bg-white hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-neutral-900">
+            <button className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800 py-2 px-3 md:px-6 lg:px-8 font-medium text-neutral-800 dark:text-neutral-200 transition-all duration-300 hover:bg-neutral-900 hover:text-white dark:hover:bg-white dark:hover:text-black hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-neutral-900">
               <span className="mr-2">View all projects on GitHub</span>
               <FaArrowRight className="transition-transform group-hover:translate-x-1" />
             </button>
@@ -48,21 +48,21 @@ function ProjectCard({ project }) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className="group relative flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 hover:border-neutral-600 hover:bg-neutral-900 transition-all duration-300">
+      className="group relative flex flex-col justify-between rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 p-6 hover:border-neutral-300 dark:hover:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all duration-300">
       <div>
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold text-neutral-100 group-hover:text-green-400 transition-colors">
+          <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
             {project.title}
           </h3>
           <Link
             href={project.link}
             target="_blank"
-            className="text-neutral-500 hover:text-white transition-colors">
+            className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
             <FaExternalLinkAlt size={18} />
           </Link>
         </div>
 
-        <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-relaxed mb-6">
           {project.description}
         </p>
       </div>

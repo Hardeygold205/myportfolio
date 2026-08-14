@@ -16,4 +16,9 @@
 body {
   font-family: var(--font-JetBrains);
   scroll-behavior: smooth;
+  @apply bg-white text-neutral-900 transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-neutral-950 text-white;
 }
