@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 
 export default function Project() {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white transition-colors duration-300">
+    <section
+      id="projects"
+      className="py-20 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -112,18 +114,18 @@ export const projects = [
     language: ["React Native", "Expo Router", "Supabase", "Firebase"],
   },
   {
-    title: "Auth System API",
+    title: "Justshortlet Backend Service",
     description:
-      "Scalable authentication service with JWT-based access control and refresh token rotation. Implemented Redis caching to improve performance and secure session management.",
-    link: "https://github.com/Hardeygold205/auth-service-api",
-    language: ["Node.js", "Express.js", "Redis", "PostgreSQL", "Docker"],
+      "Designed and deployed a RESTful backend API for JustShortlet using Node.js and Express.js, with PostgreSQL for persistent data storage and Redis for caching and session management.",
+    link: "https://github.com/Hardeygold205/justshortlet-api",
+    language: ["Node.js", "Express.js", "Redis", "PostgreSQL", "Render"],
   },
   {
-    title: "ExcelExchange",
+    title: "Admin Dasboard Management",
     description:
-      "This is an Exchange App where users can buy and sell cryptocurrencies and digital funds with their local currency.",
-    link: "https://excelexchange.vercel.app",
-    language: ["React", "Next.js", "TailwindCSS", "Node.js", "MongoDB"],
+      "Designed and developed a responsive administrative dashboard with Angular and Tailwind CSS for managing JustShortlet users, hosts, properties, bookings, and platform operations.",
+    link: "https://admin.justshortlet.com",
+    language: ["Angular.js", "TypeScript", "TailwindCSS", "Vercel"],
   },
   {
     title: "CoinBitExtension DApps",

@@ -106,14 +106,14 @@ function Footer() {
                     />
                   </svg>
                 </div>
-                <div>
+                <Link href="mailto:hadiademola@gmail.com">
                   <p className="text-sm text-neutral-500 dark:text-gray-400">
                     Email
                   </p>
                   <p className="text-neutral-900 dark:text-white font-medium">
                     hadiademola@gmail.com
                   </p>
-                </div>
+                </Link>
               </motion.div>
 
               <motion.div
@@ -157,14 +157,14 @@ function Footer() {
                 <div className="w-12 h-12  rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-green-500/50 transition-shadow">
                   <BsTelephoneOutbound className="w-5 h-5" />
                 </div>
-                <div>
+                <Link href="tel:+238138553465">
                   <p className="text-sm text-neutral-500 dark:text-gray-400">
                     Phone
                   </p>
                   <p className="text-neutral-900 dark:text-white font-medium">
                     +234 813 855 3465
                   </p>
-                </div>
+                </Link>
               </motion.div>
             </div>
 

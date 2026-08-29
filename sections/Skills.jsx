@@ -12,7 +12,6 @@ import {
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
-  SiVuedotjs,
   SiLivewire,
   SiFramer,
   SiNodedotjs,
@@ -36,6 +35,8 @@ import {
   SiVercel,
   SiCpanel,
   SiCloudflare,
+  SiAngular,
+  SiRender,
 } from "react-icons/si";
 import { TbBrandReactNative, TbTerminal2 } from "react-icons/tb";
 import { FaLayerGroup } from "react-icons/fa";
@@ -59,7 +60,9 @@ function SkillCard({ skill, icon: Icon, category, color }) {
             style={{ color }}>
             <Icon />
           </motion.div>
-          <h3 className="text-neutral-900 dark:text-white font-semibold text-lg">{skill}</h3>
+          <h3 className="text-neutral-900 dark:text-white font-semibold text-lg">
+            {skill}
+          </h3>
           <span className="text-xs text-neutral-500 dark:text-white/70 uppercase tracking-wider">
             {category}
           </span>
@@ -147,17 +150,18 @@ export default function Skills() {
           color: "#FFFFFF",
         },
         {
+          name: "Angular.js",
+          icon: SiAngular,
+          category: "Frontend",
+          color: "#4FC08D",
+        },
+        {
           name: "TailwindCSS",
           icon: SiTailwindcss,
           category: "Styling",
           color: "#06B6D4",
         },
-        {
-          name: "Vue.js",
-          icon: SiVuedotjs,
-          category: "Frontend",
-          color: "#4FC08D",
-        },
+
         {
           name: "Livewire",
           icon: SiLivewire,
@@ -292,6 +296,12 @@ export default function Skills() {
           color: "#FFFFFF",
         },
         {
+          name: "Render",
+          icon: SiRender,
+          category: "Deployment",
+          color: "#FFFFFF",
+        },
+        {
           name: "cPanel",
           icon: SiCpanel,
           category: "Hosting",
@@ -308,7 +318,9 @@ export default function Skills() {
   ];
 
   return (
-    <div id="skills" className="relative py-20 overflow-hidden bg-white dark:bg-neutral-950 transition-colors duration-300">
+    <div
+      id="skills"
+      className="relative py-20 overflow-hidden bg-white dark:bg-neutral-950 transition-colors duration-300">
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
