@@ -39,7 +39,7 @@ export const metadata = {
         sameAs: [
           "https://www.linkedin.com/in/hardeygold205",
           "https://github.com/Hardeygold205",
-          "https://x.com/Hardeygold205",
+          "https://x.com/AdeCode205",
         ],
         description:
           "Hadi Ademola is a passionate Full-Stack Developer specializing in React, Next.js, React Native, Web3 and modern web technologies.",
@@ -79,7 +79,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${JetBrains.variable} dark`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${JetBrains.variable} dark`}
+      suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{

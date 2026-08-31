@@ -72,7 +72,7 @@ export default function HeroSection() {
                     {
                       name: "twitter",
                       icon: <FaXTwitter />,
-                      href: "https://x.com/Hardeygold205",
+                      href: "https://x.com/AdeCode205",
                     },
                   ].map(({ name, icon, href }, index) => (
                     <div className="group" key={index}>

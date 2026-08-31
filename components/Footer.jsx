@@ -182,7 +182,7 @@ function Footer() {
                 },
                 {
                   name: "twitter",
-                  link: "https://x.com/Hardeygold205",
+                  link: "https://x.com/AdeCode205",
                 },
                 {
                   name: "discord",
